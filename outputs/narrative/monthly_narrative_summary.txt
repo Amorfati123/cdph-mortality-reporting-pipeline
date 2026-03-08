@@ -1,0 +1,16 @@
+Latest reporting month: 2026-01
+All-cause deaths in latest month: 25,026
+Compared with the previous month, deaths changed by 164 (0.66%).
+Compared with the same month in the prior year, deaths changed by -3,929 (-13.57%).
+
+Top 5 causes of death in the latest month:
+1. Malignant neoplasms - 5,173 deaths (20.67% of all-cause deaths)
+2. Diseases of heart - 4,807 deaths (19.21% of all-cause deaths)
+3. Cerebrovascular diseases - 1,501 deaths (6.00% of all-cause deaths)
+4. Alzheimer's disease - 1,464 deaths (5.85% of all-cause deaths)
+5. Chronic lower respiratory diseases - 969 deaths (3.87% of all-cause deaths)
+
+Suppressed rows excluded from direct numeric interpretation: 968
+Data extract date: 2026-02-17
+Data revision date: 2026-02-17
+The latest reporting month should be considered provisional because the source dataset is revised monthly.

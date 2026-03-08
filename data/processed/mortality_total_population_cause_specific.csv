@@ -1,0 +1,351 @@
+_id,Year,Month,Geography_Type,Strata,Strata_Name,Cause,Cause_Desc,ICD_Revision,Count,Annotation_Code,Annotation_Desc,Data_Extract_Date,Data_Revision_Date,report_month,data_extract_date,data_revision_date,is_suppressed,suppression_type,count_numeric,is_total_population,is_all_cause,report_month_label
+29,2024,1,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1664.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,1664.0,True,False,2024-01
+40,2024,1,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5399.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,5399.0,True,False,2024-01
+51,2024,1,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,1176.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,1176.0,True,False,2024-01
+62,2024,1,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,1090.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,1090.0,True,False,2024-01
+73,2024,1,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,159.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,159.0,True,False,2024-01
+84,2024,1,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5948.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,5948.0,True,False,2024-01
+95,2024,1,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,642.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,642.0,True,False,2024-01
+106,2024,1,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1759.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,1759.0,True,False,2024-01
+117,2024,1,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,548.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,548.0,True,False,2024-01
+128,2024,1,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,493.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,493.0,True,False,2024-01
+139,2024,1,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,378.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,378.0,True,False,2024-01
+150,2024,1,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,798.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,798.0,True,False,2024-01
+161,2024,1,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1645.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,1645.0,True,False,2024-01
+172,2024,1,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,362.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,362.0,True,False,2024-01
+211,2024,2,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1315.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,1315.0,True,False,2024-02
+222,2024,2,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4902.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,4902.0,True,False,2024-02
+233,2024,2,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,928.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,928.0,True,False,2024-02
+244,2024,2,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,949.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,949.0,True,False,2024-02
+255,2024,2,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,144.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,144.0,True,False,2024-02
+266,2024,2,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5155.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,5155.0,True,False,2024-02
+277,2024,2,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,536.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,536.0,True,False,2024-02
+288,2024,2,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1678.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,1678.0,True,False,2024-02
+299,2024,2,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,522.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,522.0,True,False,2024-02
+310,2024,2,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,367.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,367.0,True,False,2024-02
+321,2024,2,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,337.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,337.0,True,False,2024-02
+332,2024,2,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,513.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,513.0,True,False,2024-02
+343,2024,2,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1437.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,1437.0,True,False,2024-02
+354,2024,2,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,298.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,298.0,True,False,2024-02
+393,2024,3,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1314.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,1314.0,True,False,2024-03
+404,2024,3,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5122.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,5122.0,True,False,2024-03
+415,2024,3,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,1011.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,1011.0,True,False,2024-03
+426,2024,3,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,977.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,977.0,True,False,2024-03
+437,2024,3,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,144.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,144.0,True,False,2024-03
+448,2024,3,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5475.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,5475.0,True,False,2024-03
+459,2024,3,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,563.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,563.0,True,False,2024-03
+470,2024,3,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1662.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,1662.0,True,False,2024-03
+481,2024,3,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,529.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,529.0,True,False,2024-03
+492,2024,3,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,445.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,445.0,True,False,2024-03
+503,2024,3,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,331.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,331.0,True,False,2024-03
+514,2024,3,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,475.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,475.0,True,False,2024-03
+525,2024,3,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1480.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,1480.0,True,False,2024-03
+536,2024,3,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,359.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,359.0,True,False,2024-03
+575,2024,4,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1347.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,1347.0,True,False,2024-04
+586,2024,4,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4998.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,4998.0,True,False,2024-04
+597,2024,4,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,991.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,991.0,True,False,2024-04
+608,2024,4,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,856.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,856.0,True,False,2024-04
+619,2024,4,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,139.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,139.0,True,False,2024-04
+630,2024,4,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5185.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,5185.0,True,False,2024-04
+641,2024,4,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,523.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,523.0,True,False,2024-04
+652,2024,4,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1606.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,1606.0,True,False,2024-04
+663,2024,4,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,536.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,536.0,True,False,2024-04
+674,2024,4,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,396.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,396.0,True,False,2024-04
+685,2024,4,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,309.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,309.0,True,False,2024-04
+696,2024,4,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,467.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,467.0,True,False,2024-04
+707,2024,4,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1468.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,1468.0,True,False,2024-04
+718,2024,4,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,344.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,344.0,True,False,2024-04
+757,2024,5,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1279.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,1279.0,True,False,2024-05
+768,2024,5,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5195.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,5195.0,True,False,2024-05
+779,2024,5,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,1026.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,1026.0,True,False,2024-05
+790,2024,5,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,852.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,852.0,True,False,2024-05
+801,2024,5,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,139.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,139.0,True,False,2024-05
+812,2024,5,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5231.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,5231.0,True,False,2024-05
+823,2024,5,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,513.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,513.0,True,False,2024-05
+834,2024,5,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1593.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,1593.0,True,False,2024-05
+845,2024,5,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,503.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,503.0,True,False,2024-05
+856,2024,5,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,397.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,397.0,True,False,2024-05
+867,2024,5,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,302.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,302.0,True,False,2024-05
+878,2024,5,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,432.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,432.0,True,False,2024-05
+889,2024,5,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1493.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,1493.0,True,False,2024-05
+900,2024,5,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,371.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,371.0,True,False,2024-05
+939,2024,6,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1270.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,1270.0,True,False,2024-06
+950,2024,6,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4988.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,4988.0,True,False,2024-06
+961,2024,6,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,920.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,920.0,True,False,2024-06
+972,2024,6,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,847.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,847.0,True,False,2024-06
+983,2024,6,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,182.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,182.0,True,False,2024-06
+994,2024,6,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5056.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,5056.0,True,False,2024-06
+1005,2024,6,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,470.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,470.0,True,False,2024-06
+1016,2024,6,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1689.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,1689.0,True,False,2024-06
+1027,2024,6,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,501.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,501.0,True,False,2024-06
+1038,2024,6,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,356.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,356.0,True,False,2024-06
+1049,2024,6,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,343.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,343.0,True,False,2024-06
+1060,2024,6,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,379.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,379.0,True,False,2024-06
+1071,2024,6,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1396.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,1396.0,True,False,2024-06
+1082,2024,6,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,339.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,339.0,True,False,2024-06
+1121,2024,7,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1319.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,1319.0,True,False,2024-07
+1132,2024,7,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5151.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,5151.0,True,False,2024-07
+1143,2024,7,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,898.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,898.0,True,False,2024-07
+1154,2024,7,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,900.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,900.0,True,False,2024-07
+1165,2024,7,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,182.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,182.0,True,False,2024-07
+1176,2024,7,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5210.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,5210.0,True,False,2024-07
+1187,2024,7,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,556.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,556.0,True,False,2024-07
+1198,2024,7,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1717.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,1717.0,True,False,2024-07
+1209,2024,7,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,502.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,502.0,True,False,2024-07
+1220,2024,7,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,401.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,401.0,True,False,2024-07
+1231,2024,7,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,372.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,372.0,True,False,2024-07
+1242,2024,7,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,383.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,383.0,True,False,2024-07
+1253,2024,7,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1405.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,1405.0,True,False,2024-07
+1264,2024,7,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,381.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,381.0,True,False,2024-07
+1303,2024,8,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1351.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,1351.0,True,False,2024-08
+1314,2024,8,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5164.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,5164.0,True,False,2024-08
+1325,2024,8,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,920.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,920.0,True,False,2024-08
+1336,2024,8,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,886.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,886.0,True,False,2024-08
+1347,2024,8,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,154.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,154.0,True,False,2024-08
+1358,2024,8,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4863.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,4863.0,True,False,2024-08
+1369,2024,8,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,494.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,494.0,True,False,2024-08
+1380,2024,8,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1623.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,1623.0,True,False,2024-08
+1391,2024,8,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,480.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,480.0,True,False,2024-08
+1402,2024,8,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,392.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,392.0,True,False,2024-08
+1413,2024,8,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,357.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,357.0,True,False,2024-08
+1424,2024,8,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,346.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,346.0,True,False,2024-08
+1435,2024,8,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1422.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,1422.0,True,False,2024-08
+1446,2024,8,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,381.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,381.0,True,False,2024-08
+1485,2024,9,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1273.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,1273.0,True,False,2024-09
+1496,2024,9,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4929.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,4929.0,True,False,2024-09
+1507,2024,9,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,826.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,826.0,True,False,2024-09
+1518,2024,9,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,867.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,867.0,True,False,2024-09
+1529,2024,9,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,155.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,155.0,True,False,2024-09
+1540,2024,9,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4750.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,4750.0,True,False,2024-09
+1551,2024,9,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,471.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,471.0,True,False,2024-09
+1562,2024,9,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1536.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,1536.0,True,False,2024-09
+1573,2024,9,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,503.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,503.0,True,False,2024-09
+1584,2024,9,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,369.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,369.0,True,False,2024-09
+1595,2024,9,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,332.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,332.0,True,False,2024-09
+1606,2024,9,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,319.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,319.0,True,False,2024-09
+1617,2024,9,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1422.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,1422.0,True,False,2024-09
+1628,2024,9,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,349.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,349.0,True,False,2024-09
+1667,2024,10,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1296.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,1296.0,True,False,2024-10
+1678,2024,10,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5204.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,5204.0,True,False,2024-10
+1689,2024,10,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,898.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,898.0,True,False,2024-10
+1700,2024,10,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,898.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,898.0,True,False,2024-10
+1711,2024,10,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,155.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,155.0,True,False,2024-10
+1722,2024,10,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4971.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,4971.0,True,False,2024-10
+1733,2024,10,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,496.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,496.0,True,False,2024-10
+1744,2024,10,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1526.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,1526.0,True,False,2024-10
+1755,2024,10,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,538.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,538.0,True,False,2024-10
+1766,2024,10,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,404.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,404.0,True,False,2024-10
+1777,2024,10,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,340.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,340.0,True,False,2024-10
+1788,2024,10,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,360.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,360.0,True,False,2024-10
+1799,2024,10,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1409.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,1409.0,True,False,2024-10
+1810,2024,10,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,338.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,338.0,True,False,2024-10
+1849,2024,11,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1406.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,1406.0,True,False,2024-11
+1860,2024,11,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5174.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,5174.0,True,False,2024-11
+1871,2024,11,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,890.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,890.0,True,False,2024-11
+1882,2024,11,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,946.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,946.0,True,False,2024-11
+1893,2024,11,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,149.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,149.0,True,False,2024-11
+1904,2024,11,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5256.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,5256.0,True,False,2024-11
+1915,2024,11,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,582.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,582.0,True,False,2024-11
+1926,2024,11,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1499.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,1499.0,True,False,2024-11
+1937,2024,11,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,526.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,526.0,True,False,2024-11
+1948,2024,11,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,432.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,432.0,True,False,2024-11
+1959,2024,11,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,384.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,384.0,True,False,2024-11
+1970,2024,11,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,429.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,429.0,True,False,2024-11
+1981,2024,11,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1489.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,1489.0,True,False,2024-11
+1992,2024,11,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,277.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,277.0,True,False,2024-11
+2031,2024,12,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1457.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,1457.0,True,False,2024-12
+2042,2024,12,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5289.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,5289.0,True,False,2024-12
+2053,2024,12,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,1059.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,1059.0,True,False,2024-12
+2064,2024,12,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,1081.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,1081.0,True,False,2024-12
+2075,2024,12,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,139.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,139.0,True,False,2024-12
+2086,2024,12,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5887.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,5887.0,True,False,2024-12
+2097,2024,12,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,609.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,609.0,True,False,2024-12
+2108,2024,12,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1575.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,1575.0,True,False,2024-12
+2119,2024,12,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,636.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,636.0,True,False,2024-12
+2130,2024,12,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,454.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,454.0,True,False,2024-12
+2141,2024,12,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,375.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,375.0,True,False,2024-12
+2152,2024,12,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,674.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,674.0,True,False,2024-12
+2163,2024,12,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1645.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,1645.0,True,False,2024-12
+2174,2024,12,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,328.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,328.0,True,False,2024-12
+2213,2025,1,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1663.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1663.0,True,False,2025-01
+2224,2025,1,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5475.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,5475.0,True,False,2025-01
+2235,2025,1,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,1207.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1207.0,True,False,2025-01
+2246,2025,1,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,1167.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1167.0,True,False,2025-01
+2257,2025,1,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,129.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,129.0,True,False,2025-01
+2268,2025,1,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,6549.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,6549.0,True,False,2025-01
+2279,2025,1,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,665.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,665.0,True,False,2025-01
+2290,2025,1,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1697.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1697.0,True,False,2025-01
+2301,2025,1,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,635.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,635.0,True,False,2025-01
+2312,2025,1,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,486.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,486.0,True,False,2025-01
+2323,2025,1,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,429.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,429.0,True,False,2025-01
+2334,2025,1,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,1184.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1184.0,True,False,2025-01
+2345,2025,1,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1696.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1696.0,True,False,2025-01
+2356,2025,1,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,342.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,342.0,True,False,2025-01
+2395,2025,2,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1445.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,1445.0,True,False,2025-02
+2406,2025,2,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4814.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,4814.0,True,False,2025-02
+2417,2025,2,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,1109.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,1109.0,True,False,2025-02
+2428,2025,2,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,1008.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,1008.0,True,False,2025-02
+2439,2025,2,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,110.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,110.0,True,False,2025-02
+2450,2025,2,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5601.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,5601.0,True,False,2025-02
+2461,2025,2,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,572.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,572.0,True,False,2025-02
+2472,2025,2,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1459.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,1459.0,True,False,2025-02
+2483,2025,2,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,507.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,507.0,True,False,2025-02
+2494,2025,2,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,506.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,506.0,True,False,2025-02
+2505,2025,2,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,319.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,319.0,True,False,2025-02
+2516,2025,2,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,974.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,974.0,True,False,2025-02
+2527,2025,2,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1510.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,1510.0,True,False,2025-02
+2538,2025,2,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,293.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,293.0,True,False,2025-02
+2577,2025,3,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1345.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,1345.0,True,False,2025-03
+2588,2025,3,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5136.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,5136.0,True,False,2025-03
+2599,2025,3,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,1158.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,1158.0,True,False,2025-03
+2610,2025,3,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,924.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,924.0,True,False,2025-03
+2621,2025,3,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,119.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,119.0,True,False,2025-03
+2632,2025,3,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5537.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,5537.0,True,False,2025-03
+2643,2025,3,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,565.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,565.0,True,False,2025-03
+2654,2025,3,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1550.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,1550.0,True,False,2025-03
+2665,2025,3,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,566.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,566.0,True,False,2025-03
+2676,2025,3,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,462.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,462.0,True,False,2025-03
+2687,2025,3,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,390.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,390.0,True,False,2025-03
+2698,2025,3,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,622.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,622.0,True,False,2025-03
+2709,2025,3,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1522.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,1522.0,True,False,2025-03
+2720,2025,3,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,340.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,340.0,True,False,2025-03
+2759,2025,4,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1286.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,1286.0,True,False,2025-04
+2770,2025,4,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4964.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,4964.0,True,False,2025-04
+2781,2025,4,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,940.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,940.0,True,False,2025-04
+2792,2025,4,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,859.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,859.0,True,False,2025-04
+2803,2025,4,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,132.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,132.0,True,False,2025-04
+2814,2025,4,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5252.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,5252.0,True,False,2025-04
+2825,2025,4,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,469.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,469.0,True,False,2025-04
+2836,2025,4,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1458.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,1458.0,True,False,2025-04
+2847,2025,4,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,517.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,517.0,True,False,2025-04
+2858,2025,4,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,413.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,413.0,True,False,2025-04
+2869,2025,4,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,326.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,326.0,True,False,2025-04
+2880,2025,4,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,474.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,474.0,True,False,2025-04
+2891,2025,4,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1477.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,1477.0,True,False,2025-04
+2902,2025,4,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,354.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,354.0,True,False,2025-04
+2941,2025,5,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1323.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,1323.0,True,False,2025-05
+2952,2025,5,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5164.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,5164.0,True,False,2025-05
+2963,2025,5,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,938.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,938.0,True,False,2025-05
+2974,2025,5,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,907.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,907.0,True,False,2025-05
+2985,2025,5,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,127.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,127.0,True,False,2025-05
+2996,2025,5,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5261.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,5261.0,True,False,2025-05
+3007,2025,5,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,549.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,549.0,True,False,2025-05
+3018,2025,5,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1534.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,1534.0,True,False,2025-05
+3029,2025,5,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,534.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,534.0,True,False,2025-05
+3040,2025,5,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,441.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,441.0,True,False,2025-05
+3051,2025,5,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,359.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,359.0,True,False,2025-05
+3062,2025,5,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,413.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,413.0,True,False,2025-05
+3073,2025,5,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1491.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,1491.0,True,False,2025-05
+3084,2025,5,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,351.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,351.0,True,False,2025-05
+3123,2025,6,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1224.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,1224.0,True,False,2025-06
+3134,2025,6,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5026.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,5026.0,True,False,2025-06
+3145,2025,6,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,922.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,922.0,True,False,2025-06
+3156,2025,6,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,856.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,856.0,True,False,2025-06
+3167,2025,6,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,124.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,124.0,True,False,2025-06
+3178,2025,6,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4788.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,4788.0,True,False,2025-06
+3189,2025,6,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,505.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,505.0,True,False,2025-06
+3200,2025,6,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1459.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,1459.0,True,False,2025-06
+3211,2025,6,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,468.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,468.0,True,False,2025-06
+3222,2025,6,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,383.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,383.0,True,False,2025-06
+3233,2025,6,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,331.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,331.0,True,False,2025-06
+3244,2025,6,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,354.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,354.0,True,False,2025-06
+3255,2025,6,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1401.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,1401.0,True,False,2025-06
+3266,2025,6,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,338.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,338.0,True,False,2025-06
+3305,2025,7,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1253.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,1253.0,True,False,2025-07
+3316,2025,7,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5206.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,5206.0,True,False,2025-07
+3327,2025,7,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,864.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,864.0,True,False,2025-07
+3338,2025,7,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,798.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,798.0,True,False,2025-07
+3349,2025,7,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,122.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,122.0,True,False,2025-07
+3360,2025,7,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4754.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,4754.0,True,False,2025-07
+3371,2025,7,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,506.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,506.0,True,False,2025-07
+3382,2025,7,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1557.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,1557.0,True,False,2025-07
+3393,2025,7,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,482.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,482.0,True,False,2025-07
+3404,2025,7,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,350.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,350.0,True,False,2025-07
+3415,2025,7,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,330.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,330.0,True,False,2025-07
+3426,2025,7,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,329.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,329.0,True,False,2025-07
+3437,2025,7,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1380.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,1380.0,True,False,2025-07
+3448,2025,7,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,322.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,322.0,True,False,2025-07
+3487,2025,8,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1312.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,1312.0,True,False,2025-08
+3498,2025,8,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5035.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,5035.0,True,False,2025-08
+3509,2025,8,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,886.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,886.0,True,False,2025-08
+3520,2025,8,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,893.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,893.0,True,False,2025-08
+3531,2025,8,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,132.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,132.0,True,False,2025-08
+3542,2025,8,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4682.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,4682.0,True,False,2025-08
+3553,2025,8,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,560.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,560.0,True,False,2025-08
+3564,2025,8,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1515.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,1515.0,True,False,2025-08
+3575,2025,8,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,508.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,508.0,True,False,2025-08
+3586,2025,8,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,348.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,348.0,True,False,2025-08
+3597,2025,8,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,378.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,378.0,True,False,2025-08
+3608,2025,8,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,328.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,328.0,True,False,2025-08
+3619,2025,8,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1406.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,1406.0,True,False,2025-08
+3630,2025,8,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,362.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,362.0,True,False,2025-08
+3669,2025,9,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1231.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,1231.0,True,False,2025-09
+3680,2025,9,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4933.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,4933.0,True,False,2025-09
+3691,2025,9,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,820.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,820.0,True,False,2025-09
+3702,2025,9,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,833.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,833.0,True,False,2025-09
+3713,2025,9,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,126.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,126.0,True,False,2025-09
+3724,2025,9,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4578.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,4578.0,True,False,2025-09
+3735,2025,9,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,516.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,516.0,True,False,2025-09
+3746,2025,9,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1418.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,1418.0,True,False,2025-09
+3757,2025,9,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,481.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,481.0,True,False,2025-09
+3768,2025,9,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,356.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,356.0,True,False,2025-09
+3779,2025,9,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,339.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,339.0,True,False,2025-09
+3790,2025,9,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,336.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,336.0,True,False,2025-09
+3801,2025,9,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1265.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,1265.0,True,False,2025-09
+3812,2025,9,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,301.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,301.0,True,False,2025-09
+3851,2025,10,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1267.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,1267.0,True,False,2025-10
+3862,2025,10,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5195.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,5195.0,True,False,2025-10
+3873,2025,10,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,818.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,818.0,True,False,2025-10
+3884,2025,10,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,879.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,879.0,True,False,2025-10
+3895,2025,10,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,95.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,95.0,True,False,2025-10
+3906,2025,10,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4808.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,4808.0,True,False,2025-10
+3917,2025,10,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,581.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,581.0,True,False,2025-10
+3928,2025,10,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1273.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,1273.0,True,False,2025-10
+3939,2025,10,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,521.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,521.0,True,False,2025-10
+3950,2025,10,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,367.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,367.0,True,False,2025-10
+3961,2025,10,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,377.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,377.0,True,False,2025-10
+3972,2025,10,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,340.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,340.0,True,False,2025-10
+3983,2025,10,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1475.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,1475.0,True,False,2025-10
+3994,2025,10,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,292.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,292.0,True,False,2025-10
+4033,2025,11,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1244.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,1244.0,True,False,2025-11
+4044,2025,11,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,4927.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,4927.0,True,False,2025-11
+4055,2025,11,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,839.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,839.0,True,False,2025-11
+4066,2025,11,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,911.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,911.0,True,False,2025-11
+4077,2025,11,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,93.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,93.0,True,False,2025-11
+4088,2025,11,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4790.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,4790.0,True,False,2025-11
+4099,2025,11,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,564.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,564.0,True,False,2025-11
+4110,2025,11,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,1153.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,1153.0,True,False,2025-11
+4121,2025,11,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,481.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,481.0,True,False,2025-11
+4132,2025,11,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,344.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,344.0,True,False,2025-11
+4143,2025,11,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,333.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,333.0,True,False,2025-11
+4154,2025,11,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,331.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,331.0,True,False,2025-11
+4165,2025,11,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1463.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,1463.0,True,False,2025-11
+4176,2025,11,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,272.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,272.0,True,False,2025-11
+4215,2025,12,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1409.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,1409.0,True,False,2025-12
+4226,2025,12,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5098.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,5098.0,True,False,2025-12
+4237,2025,12,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,955.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,955.0,True,False,2025-12
+4248,2025,12,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,1069.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,1069.0,True,False,2025-12
+4259,2025,12,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,92.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,92.0,True,False,2025-12
+4270,2025,12,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,5135.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,5135.0,True,False,2025-12
+4281,2025,12,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,591.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,591.0,True,False,2025-12
+4292,2025,12,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,857.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,857.0,True,False,2025-12
+4303,2025,12,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,497.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,497.0,True,False,2025-12
+4314,2025,12,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,406.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,406.0,True,False,2025-12
+4325,2025,12,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,429.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,429.0,True,False,2025-12
+4336,2025,12,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,515.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,515.0,True,False,2025-12
+4347,2025,12,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1561.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,1561.0,True,False,2025-12
+4358,2025,12,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,229.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,229.0,True,False,2025-12
+4397,2026,1,Occurrence,Total Population,Total Population,ALZ,Alzheimer's disease,ICD-10,1464.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,1464.0,True,False,2026-01
+4408,2026,1,Occurrence,Total Population,Total Population,CAN,Malignant neoplasms,ICD-10,5173.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,5173.0,True,False,2026-01
+4419,2026,1,Occurrence,Total Population,Total Population,CLD,Chronic lower respiratory diseases,ICD-10,969.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,969.0,True,False,2026-01
+4430,2026,1,Occurrence,Total Population,Total Population,DIA,Diabetes mellitus,ICD-10,956.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,956.0,True,False,2026-01
+4441,2026,1,Occurrence,Total Population,Total Population,HOM,Assault (homicide),ICD-10,53.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,53.0,True,False,2026-01
+4452,2026,1,Occurrence,Total Population,Total Population,HTD,Diseases of heart,ICD-10,4807.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,4807.0,True,False,2026-01
+4463,2026,1,Occurrence,Total Population,Total Population,HYP,Essential hypertension and hypertensive renal disease,ICD-10,627.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,627.0,True,False,2026-01
+4474,2026,1,Occurrence,Total Population,Total Population,INJ,Accidents (unintentional injuries),ICD-10,479.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,479.0,True,False,2026-01
+4485,2026,1,Occurrence,Total Population,Total Population,LIV,Chronic liver disease and cirrhosis,ICD-10,512.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,512.0,True,False,2026-01
+4496,2026,1,Occurrence,Total Population,Total Population,NEP,"Nephritis, nephrotic syndrome and nephrosis",ICD-10,337.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,337.0,True,False,2026-01
+4507,2026,1,Occurrence,Total Population,Total Population,PAR,Parkinson's disease,ICD-10,405.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,405.0,True,False,2026-01
+4518,2026,1,Occurrence,Total Population,Total Population,PNF,Influenza and pneumonia,ICD-10,617.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,617.0,True,False,2026-01
+4529,2026,1,Occurrence,Total Population,Total Population,STK,Cerebrovascular diseases,ICD-10,1501.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,1501.0,True,False,2026-01
+4540,2026,1,Occurrence,Total Population,Total Population,SUI,Intentional self-harm (suicide),ICD-10,143.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,143.0,True,False,2026-01

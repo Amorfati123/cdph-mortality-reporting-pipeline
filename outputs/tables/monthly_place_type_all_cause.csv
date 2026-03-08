@@ -1,0 +1,151 @@
+report_month,report_month_label,place_type,deaths
+2024-01-01,2024-01,Decedent's Home,10359.0
+2024-01-01,2024-01,Emergency Room/Outpatient,1493.0
+2024-01-01,2024-01,Hospice Facility,257.0
+2024-01-01,2024-01,Inpatient,9000.0
+2024-01-01,2024-01,Nursing Home/Long Term Care Facility,2181.0
+2024-01-01,2024-01,Other/Unknown,4438.0
+2024-02-01,2024-02,Decedent's Home,8962.0
+2024-02-01,2024-02,Emergency Room/Outpatient,1228.0
+2024-02-01,2024-02,Hospice Facility,212.0
+2024-02-01,2024-02,Inpatient,7640.0
+2024-02-01,2024-02,Nursing Home/Long Term Care Facility,1756.0
+2024-02-01,2024-02,Other/Unknown,3944.0
+2024-03-01,2024-03,Decedent's Home,9315.0
+2024-03-01,2024-03,Emergency Room/Outpatient,1332.0
+2024-03-01,2024-03,Hospice Facility,235.0
+2024-03-01,2024-03,Inpatient,7720.0
+2024-03-01,2024-03,Nursing Home/Long Term Care Facility,1925.0
+2024-03-01,2024-03,Other/Unknown,4032.0
+2024-04-01,2024-04,Decedent's Home,8991.0
+2024-04-01,2024-04,Emergency Room/Outpatient,1217.0
+2024-04-01,2024-04,Hospice Facility,228.0
+2024-04-01,2024-04,Inpatient,7347.0
+2024-04-01,2024-04,Nursing Home/Long Term Care Facility,1927.0
+2024-04-01,2024-04,Other/Unknown,3868.0
+2024-05-01,2024-05,Decedent's Home,9126.0
+2024-05-01,2024-05,Emergency Room/Outpatient,1189.0
+2024-05-01,2024-05,Hospice Facility,275.0
+2024-05-01,2024-05,Inpatient,7434.0
+2024-05-01,2024-05,Nursing Home/Long Term Care Facility,2145.0
+2024-05-01,2024-05,Other/Unknown,3654.0
+2024-06-01,2024-06,Decedent's Home,8899.0
+2024-06-01,2024-06,Emergency Room/Outpatient,1255.0
+2024-06-01,2024-06,Hospice Facility,232.0
+2024-06-01,2024-06,Inpatient,7166.0
+2024-06-01,2024-06,Nursing Home/Long Term Care Facility,2184.0
+2024-06-01,2024-06,Other/Unknown,3549.0
+2024-07-01,2024-07,Decedent's Home,9343.0
+2024-07-01,2024-07,Emergency Room/Outpatient,1391.0
+2024-07-01,2024-07,Hospice Facility,243.0
+2024-07-01,2024-07,Inpatient,7124.0
+2024-07-01,2024-07,Nursing Home/Long Term Care Facility,2385.0
+2024-07-01,2024-07,Other/Unknown,3551.0
+2024-08-01,2024-08,Decedent's Home,9006.0
+2024-08-01,2024-08,Emergency Room/Outpatient,1233.0
+2024-08-01,2024-08,Hospice Facility,308.0
+2024-08-01,2024-08,Inpatient,7144.0
+2024-08-01,2024-08,Nursing Home/Long Term Care Facility,2992.0
+2024-08-01,2024-08,Other/Unknown,2836.0
+2024-09-01,2024-09,Decedent's Home,8657.0
+2024-09-01,2024-09,Emergency Room/Outpatient,1206.0
+2024-09-01,2024-09,Hospice Facility,285.0
+2024-09-01,2024-09,Inpatient,7036.0
+2024-09-01,2024-09,Nursing Home/Long Term Care Facility,2784.0
+2024-09-01,2024-09,Other/Unknown,2571.0
+2024-10-01,2024-10,Decedent's Home,9004.0
+2024-10-01,2024-10,Emergency Room/Outpatient,1321.0
+2024-10-01,2024-10,Hospice Facility,287.0
+2024-10-01,2024-10,Inpatient,7243.0
+2024-10-01,2024-10,Nursing Home/Long Term Care Facility,3106.0
+2024-10-01,2024-10,Other/Unknown,2412.0
+2024-11-01,2024-11,Decedent's Home,9277.0
+2024-11-01,2024-11,Emergency Room/Outpatient,1404.0
+2024-11-01,2024-11,Hospice Facility,303.0
+2024-11-01,2024-11,Inpatient,7477.0
+2024-11-01,2024-11,Nursing Home/Long Term Care Facility,3794.0
+2024-11-01,2024-11,Other/Unknown,1834.0
+2024-12-01,2024-12,Decedent's Home,9959.0
+2024-12-01,2024-12,Emergency Room/Outpatient,1590.0
+2024-12-01,2024-12,Hospice Facility,297.0
+2024-12-01,2024-12,Inpatient,8567.0
+2024-12-01,2024-12,Nursing Home/Long Term Care Facility,4335.0
+2024-12-01,2024-12,Other/Unknown,1553.0
+2025-01-01,2025-01,Decedent's Home,10612.0
+2025-01-01,2025-01,Emergency Room/Outpatient,1680.0
+2025-01-01,2025-01,Hospice Facility,375.0
+2025-01-01,2025-01,Inpatient,9751.0
+2025-01-01,2025-01,Nursing Home/Long Term Care Facility,4928.0
+2025-01-01,2025-01,Other/Unknown,1609.0
+2025-02-01,2025-02,Decedent's Home,9289.0
+2025-02-01,2025-02,Emergency Room/Outpatient,1330.0
+2025-02-01,2025-02,Hospice Facility,312.0
+2025-02-01,2025-02,Inpatient,8321.0
+2025-02-01,2025-02,Nursing Home/Long Term Care Facility,4383.0
+2025-02-01,2025-02,Other/Unknown,1392.0
+2025-03-01,2025-03,Decedent's Home,9708.0
+2025-03-01,2025-03,Emergency Room/Outpatient,1401.0
+2025-03-01,2025-03,Hospice Facility,355.0
+2025-03-01,2025-03,Inpatient,8073.0
+2025-03-01,2025-03,Nursing Home/Long Term Care Facility,4231.0
+2025-03-01,2025-03,Other/Unknown,1388.0
+2025-04-01,2025-04,Decedent's Home,9100.0
+2025-04-01,2025-04,Emergency Room/Outpatient,1242.0
+2025-04-01,2025-04,Hospice Facility,347.0
+2025-04-01,2025-04,Inpatient,7443.0
+2025-04-01,2025-04,Nursing Home/Long Term Care Facility,3972.0
+2025-04-01,2025-04,Other/Unknown,1306.0
+2025-05-01,2025-05,Decedent's Home,9325.0
+2025-05-01,2025-05,Emergency Room/Outpatient,1313.0
+2025-05-01,2025-05,Hospice Facility,324.0
+2025-05-01,2025-05,Inpatient,7531.0
+2025-05-01,2025-05,Nursing Home/Long Term Care Facility,4144.0
+2025-05-01,2025-05,Other/Unknown,1398.0
+2025-06-01,2025-06,Decedent's Home,8783.0
+2025-06-01,2025-06,Emergency Room/Outpatient,1143.0
+2025-06-01,2025-06,Hospice Facility,313.0
+2025-06-01,2025-06,Inpatient,6959.0
+2025-06-01,2025-06,Nursing Home/Long Term Care Facility,3925.0
+2025-06-01,2025-06,Other/Unknown,1301.0
+2025-07-01,2025-07,Decedent's Home,8961.0
+2025-07-01,2025-07,Emergency Room/Outpatient,1206.0
+2025-07-01,2025-07,Hospice Facility,274.0
+2025-07-01,2025-07,Inpatient,7048.0
+2025-07-01,2025-07,Nursing Home/Long Term Care Facility,4036.0
+2025-07-01,2025-07,Other/Unknown,1249.0
+2025-08-01,2025-08,Decedent's Home,9036.0
+2025-08-01,2025-08,Emergency Room/Outpatient,1223.0
+2025-08-01,2025-08,Hospice Facility,313.0
+2025-08-01,2025-08,Inpatient,7146.0
+2025-08-01,2025-08,Nursing Home/Long Term Care Facility,4138.0
+2025-08-01,2025-08,Other/Unknown,1292.0
+2025-09-01,2025-09,Decedent's Home,8441.0
+2025-09-01,2025-09,Emergency Room/Outpatient,1212.0
+2025-09-01,2025-09,Hospice Facility,277.0
+2025-09-01,2025-09,Inpatient,6931.0
+2025-09-01,2025-09,Nursing Home/Long Term Care Facility,3962.0
+2025-09-01,2025-09,Other/Unknown,1157.0
+2025-10-01,2025-10,Decedent's Home,8981.0
+2025-10-01,2025-10,Emergency Room/Outpatient,1254.0
+2025-10-01,2025-10,Hospice Facility,301.0
+2025-10-01,2025-10,Inpatient,7204.0
+2025-10-01,2025-10,Nursing Home/Long Term Care Facility,4138.0
+2025-10-01,2025-10,Other/Unknown,1116.0
+2025-11-01,2025-11,Decedent's Home,8898.0
+2025-11-01,2025-11,Emergency Room/Outpatient,1219.0
+2025-11-01,2025-11,Hospice Facility,293.0
+2025-11-01,2025-11,Inpatient,7020.0
+2025-11-01,2025-11,Nursing Home/Long Term Care Facility,4086.0
+2025-11-01,2025-11,Other/Unknown,1084.0
+2025-12-01,2025-12,Decedent's Home,9613.0
+2025-12-01,2025-12,Emergency Room/Outpatient,1427.0
+2025-12-01,2025-12,Hospice Facility,306.0
+2025-12-01,2025-12,Inpatient,7967.0
+2025-12-01,2025-12,Nursing Home/Long Term Care Facility,4408.0
+2025-12-01,2025-12,Other/Unknown,1141.0
+2026-01-01,2026-01,Decedent's Home,9397.0
+2026-01-01,2026-01,Emergency Room/Outpatient,1248.0
+2026-01-01,2026-01,Hospice Facility,317.0
+2026-01-01,2026-01,Inpatient,8346.0
+2026-01-01,2026-01,Nursing Home/Long Term Care Facility,4649.0
+2026-01-01,2026-01,Other/Unknown,1069.0

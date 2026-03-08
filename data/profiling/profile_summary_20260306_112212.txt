@@ -1,0 +1,14 @@
+Run timestamp: 20260306_112212
+Row count: 4550
+Column count: 14
+Columns: ['_id', 'Year', 'Month', 'Geography_Type', 'Strata', 'Strata_Name', 'Cause', 'Cause_Desc', 'ICD_Revision', 'Count', 'Annotation_Code', 'Annotation_Desc', 'Data_Extract_Date', 'Data_Revision_Date']
+Year unique values: ['2024', '2025', '2026']
+Month unique values: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+Strata unique values: ['Age', 'Gender', 'Place Type', 'Race-Ethnicity', 'Total Population']
+Geography_Type unique values: ['Occurrence']
+ICD_Revision unique values: ['ICD-10']
+Annotation codes:
+  nan -> nan
+  1 -> Cell suppressed for small numbers
+  2 -> Cell suppressed for complementary cell
+Duplicate rows on analytic key: 0

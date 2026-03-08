@@ -1,0 +1,6 @@
+Latest reporting month: 2026-01
+Previous month used for comparison: 2025-12
+Prior-year comparison month: 2025-01
+Latest all-cause deaths: 25,026
+Previous month all-cause deaths: 24,862
+Same month prior year all-cause deaths: 28,955

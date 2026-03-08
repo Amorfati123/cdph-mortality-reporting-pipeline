@@ -1,0 +1,9 @@
+Input rows: 4550
+Output rows: 4550
+Suppressed rows: 968
+Date range: 2024-01-01 00:00:00 to 2026-01-01 00:00:00
+Total Population rows: 375
+Age rows: 275
+Gender rows: 750
+Race-Ethnicity rows: 3000
+Place Type rows: 150

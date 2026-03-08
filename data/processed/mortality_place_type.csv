@@ -1,0 +1,151 @@
+_id,Year,Month,Geography_Type,Strata,Strata_Name,Cause,Cause_Desc,ICD_Revision,Count,Annotation_Code,Annotation_Desc,Data_Extract_Date,Data_Revision_Date,report_month,data_extract_date,data_revision_date,is_suppressed,suppression_type,count_numeric,is_total_population,is_all_cause,report_month_label
+15,2024,1,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,9000.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,9000.0,False,True,2024-01
+16,2024,1,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1493.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,1493.0,False,True,2024-01
+17,2024,1,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,10359.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,10359.0,False,True,2024-01
+18,2024,1,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,257.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,257.0,False,True,2024-01
+19,2024,1,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,2181.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,2181.0,False,True,2024-01
+20,2024,1,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,4438.0,,,02/17/2026,02/17/2026,2024-01-01,2026-02-17,2026-02-17,False,,4438.0,False,True,2024-01
+197,2024,2,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7640.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,7640.0,False,True,2024-02
+198,2024,2,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1228.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,1228.0,False,True,2024-02
+199,2024,2,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8962.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,8962.0,False,True,2024-02
+200,2024,2,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,212.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,212.0,False,True,2024-02
+201,2024,2,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,1756.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,1756.0,False,True,2024-02
+202,2024,2,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,3944.0,,,02/17/2026,02/17/2026,2024-02-01,2026-02-17,2026-02-17,False,,3944.0,False,True,2024-02
+379,2024,3,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7720.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,7720.0,False,True,2024-03
+380,2024,3,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1332.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,1332.0,False,True,2024-03
+381,2024,3,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9315.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,9315.0,False,True,2024-03
+382,2024,3,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,235.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,235.0,False,True,2024-03
+383,2024,3,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,1925.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,1925.0,False,True,2024-03
+384,2024,3,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,4032.0,,,02/17/2026,02/17/2026,2024-03-01,2026-02-17,2026-02-17,False,,4032.0,False,True,2024-03
+561,2024,4,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7347.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,7347.0,False,True,2024-04
+562,2024,4,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1217.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,1217.0,False,True,2024-04
+563,2024,4,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8991.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,8991.0,False,True,2024-04
+564,2024,4,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,228.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,228.0,False,True,2024-04
+565,2024,4,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,1927.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,1927.0,False,True,2024-04
+566,2024,4,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,3868.0,,,02/17/2026,02/17/2026,2024-04-01,2026-02-17,2026-02-17,False,,3868.0,False,True,2024-04
+743,2024,5,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7434.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,7434.0,False,True,2024-05
+744,2024,5,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1189.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,1189.0,False,True,2024-05
+745,2024,5,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9126.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,9126.0,False,True,2024-05
+746,2024,5,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,275.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,275.0,False,True,2024-05
+747,2024,5,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,2145.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,2145.0,False,True,2024-05
+748,2024,5,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,3654.0,,,02/17/2026,02/17/2026,2024-05-01,2026-02-17,2026-02-17,False,,3654.0,False,True,2024-05
+925,2024,6,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7166.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,7166.0,False,True,2024-06
+926,2024,6,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1255.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,1255.0,False,True,2024-06
+927,2024,6,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8899.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,8899.0,False,True,2024-06
+928,2024,6,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,232.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,232.0,False,True,2024-06
+929,2024,6,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,2184.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,2184.0,False,True,2024-06
+930,2024,6,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,3549.0,,,02/17/2026,02/17/2026,2024-06-01,2026-02-17,2026-02-17,False,,3549.0,False,True,2024-06
+1107,2024,7,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7124.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,7124.0,False,True,2024-07
+1108,2024,7,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1391.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,1391.0,False,True,2024-07
+1109,2024,7,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9343.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,9343.0,False,True,2024-07
+1110,2024,7,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,243.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,243.0,False,True,2024-07
+1111,2024,7,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,2385.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,2385.0,False,True,2024-07
+1112,2024,7,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,3551.0,,,02/17/2026,02/17/2026,2024-07-01,2026-02-17,2026-02-17,False,,3551.0,False,True,2024-07
+1289,2024,8,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7144.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,7144.0,False,True,2024-08
+1290,2024,8,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1233.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,1233.0,False,True,2024-08
+1291,2024,8,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9006.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,9006.0,False,True,2024-08
+1292,2024,8,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,308.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,308.0,False,True,2024-08
+1293,2024,8,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,2992.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,2992.0,False,True,2024-08
+1294,2024,8,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,2836.0,,,02/17/2026,02/17/2026,2024-08-01,2026-02-17,2026-02-17,False,,2836.0,False,True,2024-08
+1471,2024,9,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7036.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,7036.0,False,True,2024-09
+1472,2024,9,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1206.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,1206.0,False,True,2024-09
+1473,2024,9,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8657.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,8657.0,False,True,2024-09
+1474,2024,9,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,285.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,285.0,False,True,2024-09
+1475,2024,9,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,2784.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,2784.0,False,True,2024-09
+1476,2024,9,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,2571.0,,,02/17/2026,02/17/2026,2024-09-01,2026-02-17,2026-02-17,False,,2571.0,False,True,2024-09
+1653,2024,10,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7243.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,7243.0,False,True,2024-10
+1654,2024,10,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1321.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,1321.0,False,True,2024-10
+1655,2024,10,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9004.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,9004.0,False,True,2024-10
+1656,2024,10,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,287.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,287.0,False,True,2024-10
+1657,2024,10,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,3106.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,3106.0,False,True,2024-10
+1658,2024,10,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,2412.0,,,02/17/2026,02/17/2026,2024-10-01,2026-02-17,2026-02-17,False,,2412.0,False,True,2024-10
+1835,2024,11,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7477.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,7477.0,False,True,2024-11
+1836,2024,11,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1404.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,1404.0,False,True,2024-11
+1837,2024,11,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9277.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,9277.0,False,True,2024-11
+1838,2024,11,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,303.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,303.0,False,True,2024-11
+1839,2024,11,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,3794.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,3794.0,False,True,2024-11
+1840,2024,11,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1834.0,,,02/17/2026,02/17/2026,2024-11-01,2026-02-17,2026-02-17,False,,1834.0,False,True,2024-11
+2017,2024,12,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,8567.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,8567.0,False,True,2024-12
+2018,2024,12,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1590.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,1590.0,False,True,2024-12
+2019,2024,12,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9959.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,9959.0,False,True,2024-12
+2020,2024,12,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,297.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,297.0,False,True,2024-12
+2021,2024,12,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4335.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,4335.0,False,True,2024-12
+2022,2024,12,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1553.0,,,02/17/2026,02/17/2026,2024-12-01,2026-02-17,2026-02-17,False,,1553.0,False,True,2024-12
+2199,2025,1,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,9751.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,9751.0,False,True,2025-01
+2200,2025,1,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1680.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1680.0,False,True,2025-01
+2201,2025,1,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,10612.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,10612.0,False,True,2025-01
+2202,2025,1,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,375.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,375.0,False,True,2025-01
+2203,2025,1,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4928.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,4928.0,False,True,2025-01
+2204,2025,1,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1609.0,,,02/17/2026,02/17/2026,2025-01-01,2026-02-17,2026-02-17,False,,1609.0,False,True,2025-01
+2381,2025,2,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,8321.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,8321.0,False,True,2025-02
+2382,2025,2,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1330.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,1330.0,False,True,2025-02
+2383,2025,2,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9289.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,9289.0,False,True,2025-02
+2384,2025,2,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,312.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,312.0,False,True,2025-02
+2385,2025,2,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4383.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,4383.0,False,True,2025-02
+2386,2025,2,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1392.0,,,02/17/2026,02/17/2026,2025-02-01,2026-02-17,2026-02-17,False,,1392.0,False,True,2025-02
+2563,2025,3,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,8073.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,8073.0,False,True,2025-03
+2564,2025,3,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1401.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,1401.0,False,True,2025-03
+2565,2025,3,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9708.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,9708.0,False,True,2025-03
+2566,2025,3,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,355.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,355.0,False,True,2025-03
+2567,2025,3,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4231.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,4231.0,False,True,2025-03
+2568,2025,3,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1388.0,,,02/17/2026,02/17/2026,2025-03-01,2026-02-17,2026-02-17,False,,1388.0,False,True,2025-03
+2745,2025,4,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7443.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,7443.0,False,True,2025-04
+2746,2025,4,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1242.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,1242.0,False,True,2025-04
+2747,2025,4,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9100.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,9100.0,False,True,2025-04
+2748,2025,4,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,347.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,347.0,False,True,2025-04
+2749,2025,4,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,3972.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,3972.0,False,True,2025-04
+2750,2025,4,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1306.0,,,02/17/2026,02/17/2026,2025-04-01,2026-02-17,2026-02-17,False,,1306.0,False,True,2025-04
+2927,2025,5,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7531.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,7531.0,False,True,2025-05
+2928,2025,5,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1313.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,1313.0,False,True,2025-05
+2929,2025,5,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9325.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,9325.0,False,True,2025-05
+2930,2025,5,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,324.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,324.0,False,True,2025-05
+2931,2025,5,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4144.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,4144.0,False,True,2025-05
+2932,2025,5,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1398.0,,,02/17/2026,02/17/2026,2025-05-01,2026-02-17,2026-02-17,False,,1398.0,False,True,2025-05
+3109,2025,6,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,6959.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,6959.0,False,True,2025-06
+3110,2025,6,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1143.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,1143.0,False,True,2025-06
+3111,2025,6,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8783.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,8783.0,False,True,2025-06
+3112,2025,6,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,313.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,313.0,False,True,2025-06
+3113,2025,6,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,3925.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,3925.0,False,True,2025-06
+3114,2025,6,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1301.0,,,02/17/2026,02/17/2026,2025-06-01,2026-02-17,2026-02-17,False,,1301.0,False,True,2025-06
+3291,2025,7,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7048.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,7048.0,False,True,2025-07
+3292,2025,7,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1206.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,1206.0,False,True,2025-07
+3293,2025,7,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8961.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,8961.0,False,True,2025-07
+3294,2025,7,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,274.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,274.0,False,True,2025-07
+3295,2025,7,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4036.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,4036.0,False,True,2025-07
+3296,2025,7,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1249.0,,,02/17/2026,02/17/2026,2025-07-01,2026-02-17,2026-02-17,False,,1249.0,False,True,2025-07
+3473,2025,8,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7146.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,7146.0,False,True,2025-08
+3474,2025,8,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1223.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,1223.0,False,True,2025-08
+3475,2025,8,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9036.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,9036.0,False,True,2025-08
+3476,2025,8,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,313.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,313.0,False,True,2025-08
+3477,2025,8,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4138.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,4138.0,False,True,2025-08
+3478,2025,8,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1292.0,,,02/17/2026,02/17/2026,2025-08-01,2026-02-17,2026-02-17,False,,1292.0,False,True,2025-08
+3655,2025,9,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,6931.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,6931.0,False,True,2025-09
+3656,2025,9,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1212.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,1212.0,False,True,2025-09
+3657,2025,9,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8441.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,8441.0,False,True,2025-09
+3658,2025,9,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,277.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,277.0,False,True,2025-09
+3659,2025,9,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,3962.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,3962.0,False,True,2025-09
+3660,2025,9,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1157.0,,,02/17/2026,02/17/2026,2025-09-01,2026-02-17,2026-02-17,False,,1157.0,False,True,2025-09
+3837,2025,10,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7204.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,7204.0,False,True,2025-10
+3838,2025,10,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1254.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,1254.0,False,True,2025-10
+3839,2025,10,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8981.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,8981.0,False,True,2025-10
+3840,2025,10,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,301.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,301.0,False,True,2025-10
+3841,2025,10,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4138.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,4138.0,False,True,2025-10
+3842,2025,10,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1116.0,,,02/17/2026,02/17/2026,2025-10-01,2026-02-17,2026-02-17,False,,1116.0,False,True,2025-10
+4019,2025,11,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7020.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,7020.0,False,True,2025-11
+4020,2025,11,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1219.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,1219.0,False,True,2025-11
+4021,2025,11,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,8898.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,8898.0,False,True,2025-11
+4022,2025,11,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,293.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,293.0,False,True,2025-11
+4023,2025,11,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4086.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,4086.0,False,True,2025-11
+4024,2025,11,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1084.0,,,02/17/2026,02/17/2026,2025-11-01,2026-02-17,2026-02-17,False,,1084.0,False,True,2025-11
+4201,2025,12,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,7967.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,7967.0,False,True,2025-12
+4202,2025,12,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1427.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,1427.0,False,True,2025-12
+4203,2025,12,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9613.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,9613.0,False,True,2025-12
+4204,2025,12,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,306.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,306.0,False,True,2025-12
+4205,2025,12,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4408.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,4408.0,False,True,2025-12
+4206,2025,12,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1141.0,,,02/17/2026,02/17/2026,2025-12-01,2026-02-17,2026-02-17,False,,1141.0,False,True,2025-12
+4383,2026,1,Occurrence,Place Type,Inpatient,ALL,All causes (total),ICD-10,8346.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,8346.0,False,True,2026-01
+4384,2026,1,Occurrence,Place Type,Emergency Room/Outpatient,ALL,All causes (total),ICD-10,1248.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,1248.0,False,True,2026-01
+4385,2026,1,Occurrence,Place Type,Decedent's Home,ALL,All causes (total),ICD-10,9397.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,9397.0,False,True,2026-01
+4386,2026,1,Occurrence,Place Type,Hospice Facility,ALL,All causes (total),ICD-10,317.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,317.0,False,True,2026-01
+4387,2026,1,Occurrence,Place Type,Nursing Home/Long Term Care Facility,ALL,All causes (total),ICD-10,4649.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,4649.0,False,True,2026-01
+4388,2026,1,Occurrence,Place Type,Other/Unknown,ALL,All causes (total),ICD-10,1069.0,,,02/17/2026,02/17/2026,2026-01-01,2026-02-17,2026-02-17,False,,1069.0,False,True,2026-01

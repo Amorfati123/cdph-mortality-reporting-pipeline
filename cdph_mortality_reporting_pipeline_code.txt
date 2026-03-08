@@ -1,0 +1,1310 @@
+===== 01_profile_data.py =====
+
+from pathlib import Path
+from datetime import datetime
+import requests
+import pandas as pd
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
+REF_DIR = PROJECT_ROOT / "data" / "reference"
+PROFILE_DIR = PROJECT_ROOT / "data" / "profiling"
+
+RAW_DIR.mkdir(parents=True, exist_ok=True)
+REF_DIR.mkdir(parents=True, exist_ok=True)
+PROFILE_DIR.mkdir(parents=True, exist_ok=True)
+
+RESOURCE_ID = "3192c0ff-e380-4314-8a88-16a3bdace8b7"
+BASE_URL = "https://data.chhs.ca.gov/api/3/action/datastore_search"
+
+def fetch_ckan_data(resource_id: str, chunk_size: int = 1000) -> pd.DataFrame:
+    all_records = []
+    offset = 0
+
+    while True:
+        response = requests.get(
+            BASE_URL,
+            params={
+                "resource_id": resource_id,
+                "limit": chunk_size,
+                "offset": offset
+            },
+            timeout=30
+        )
+        response.raise_for_status()
+        payload = response.json()
+
+        if not payload.get("success", False):
+            raise RuntimeError("CKAN API request failed.")
+
+        records = payload["result"]["records"]
+        if not records:
+            break
+
+        all_records.extend(records)
+        offset += chunk_size
+
+    return pd.DataFrame(all_records)
+
+def profile_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+
+    for col in df.columns:
+        sample_vals = df[col].dropna().astype(str).unique()[:5]
+        rows.append({
+            "column": col,
+            "dtype": str(df[col].dtype),
+            "missing_n": int(df[col].isna().sum()),
+            "missing_pct": round(df[col].isna().mean() * 100, 2),
+            "distinct_n": int(df[col].nunique(dropna=True)),
+            "sample_values": " | ".join(sample_vals)
+        })
+
+    return pd.DataFrame(rows)
+
+def main():
+    print("Pulling mortality data...", flush=True)
+
+    run_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    df = fetch_ckan_data(RESOURCE_ID)
+
+    print(f"Retrieved {df.shape[0]} rows and {df.shape[1]} columns.", flush=True)
+
+    raw_file = RAW_DIR / f"statewide_death_profiles_raw_{run_ts}.csv"
+    df.to_csv(raw_file, index=False)
+
+    dict_file = REF_DIR / "statewide_death_profiles_data_dictionary.csv"
+    if dict_file.exists():
+        df_dict = pd.read_csv(dict_file)
+        dict_copy_file = PROFILE_DIR / f"data_dictionary_copy_{run_ts}.csv"
+        df_dict.to_csv(dict_copy_file, index=False)
+    else:
+        print("Warning: data dictionary file not found.", flush=True)
+
+    profile_df = profile_dataframe(df)
+    profile_file = PROFILE_DIR / f"dataset_profile_{run_ts}.csv"
+    profile_df.to_csv(profile_file, index=False)
+
+    summary_lines = []
+    summary_lines.append(f"Run timestamp: {run_ts}")
+    summary_lines.append(f"Row count: {df.shape[0]}")
+    summary_lines.append(f"Column count: {df.shape[1]}")
+    summary_lines.append(f"Columns: {list(df.columns)}")
+
+    for col in ["Year", "Month", "Strata", "Geography_Type", "ICD_Revision"]:
+        if col in df.columns:
+            vals = sorted(df[col].dropna().astype(str).unique().tolist())
+            summary_lines.append(f"{col} unique values: {vals}")
+
+    if {"Annotation_Code", "Annotation_Desc"}.issubset(df.columns):
+        ann = df[["Annotation_Code", "Annotation_Desc"]].drop_duplicates()
+        summary_lines.append("Annotation codes:")
+        for _, row in ann.iterrows():
+            summary_lines.append(f"  {row['Annotation_Code']} -> {row['Annotation_Desc']}")
+
+    key_cols = [
+        "Year", "Month", "Geography_Type", "Strata", "Strata_Name",
+        "Cause", "Cause_Desc", "ICD_Revision"
+    ]
+    key_cols_present = [c for c in key_cols if c in df.columns]
+    dup_n = df.duplicated(subset=key_cols_present).sum()
+    summary_lines.append(f"Duplicate rows on analytic key: {dup_n}")
+
+    summary_file = PROFILE_DIR / f"profile_summary_{run_ts}.txt"
+    with open(summary_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(summary_lines))
+
+    print(f"Raw snapshot saved to: {raw_file}", flush=True)
+    print(f"Profile table saved to: {profile_file}", flush=True)
+    print(f"Summary file saved to: {summary_file}", flush=True)
+    print("Step 1 complete.", flush=True)
+
+if __name__ == "__main__":
+    main()
+
+
+===== 02_validate_data.py =====
+
+from pathlib import Path
+import pandas as pd
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
+VALIDATION_DIR = PROJECT_ROOT / "data" / "validation"
+
+VALIDATION_DIR.mkdir(parents=True, exist_ok=True)
+
+REQUIRED_COLUMNS = [
+    "_id",
+    "Year",
+    "Month",
+    "Geography_Type",
+    "Strata",
+    "Strata_Name",
+    "Cause",
+    "Cause_Desc",
+    "ICD_Revision",
+    "Count",
+    "Annotation_Code",
+    "Annotation_Desc",
+    "Data_Extract_Date",
+    "Data_Revision_Date",
+]
+
+EXPECTED_STRATA = {
+    "Age",
+    "Gender",
+    "Place Type",
+    "Race-Ethnicity",
+    "Total Population",
+}
+
+EXPECTED_GEOGRAPHY_TYPE = {"Occurrence"}
+EXPECTED_ICD_REVISION = {"ICD-10"}
+
+
+def get_latest_raw_file(raw_dir: Path) -> Path:
+    files = sorted(raw_dir.glob("statewide_death_profiles_raw_*.csv"))
+    if not files:
+        raise FileNotFoundError("No raw mortality files found in data/raw.")
+    return files[-1]
+
+
+def run_validation_checks(df: pd.DataFrame) -> pd.DataFrame:
+    results = []
+
+    def add_result(check_name: str, status: str, details: str):
+        results.append(
+            {
+                "check_name": check_name,
+                "status": status,
+                "details": details,
+            }
+        )
+
+    # Required columns
+    missing_cols = [col for col in REQUIRED_COLUMNS if col not in df.columns]
+    if missing_cols:
+        add_result("required_columns_present", "FAIL", f"Missing columns: {missing_cols}")
+    else:
+        add_result("required_columns_present", "PASS", "All required columns are present.")
+
+    # Row count
+    if len(df) > 0:
+        add_result("row_count_positive", "PASS", f"Row count = {len(df)}")
+    else:
+        add_result("row_count_positive", "FAIL", "Dataset has zero rows.")
+
+    # Fully duplicated rows
+    full_dups = int(df.duplicated().sum())
+    if full_dups == 0:
+        add_result("full_duplicate_rows", "PASS", "No fully duplicated rows found.")
+    else:
+        add_result("full_duplicate_rows", "FAIL", f"Found {full_dups} fully duplicated rows.")
+
+    # Duplicate analytic keys
+    key_cols = [
+        "Year",
+        "Month",
+        "Geography_Type",
+        "Strata",
+        "Strata_Name",
+        "Cause",
+        "Cause_Desc",
+        "ICD_Revision",
+    ]
+    dup_keys = int(df.duplicated(subset=key_cols).sum())
+    if dup_keys == 0:
+        add_result("duplicate_analytic_keys", "PASS", "No duplicate analytic keys found.")
+    else:
+        add_result("duplicate_analytic_keys", "FAIL", f"Found {dup_keys} duplicate analytic keys.")
+
+    # Year should be numeric
+    year_numeric = pd.to_numeric(df["Year"], errors="coerce")
+    invalid_years = df.loc[year_numeric.isna(), "Year"].unique().tolist()
+    if len(invalid_years) == 0:
+        add_result("year_numeric", "PASS", "All Year values are numeric.")
+    else:
+        add_result("year_numeric", "FAIL", f"Invalid Year values: {invalid_years}")
+
+    # Month should be 01 to 12
+    valid_months = {f"{i:02d}" for i in range(1, 13)}
+    invalid_months = sorted(set(df["Month"].astype(str)) - valid_months)
+    if len(invalid_months) == 0:
+        add_result("month_valid_range", "PASS", "All Month values are between 01 and 12.")
+    else:
+        add_result("month_valid_range", "FAIL", f"Invalid Month values: {invalid_months}")
+
+    # Geography type
+    geography_values = set(df["Geography_Type"].dropna().astype(str).unique())
+    if geography_values == EXPECTED_GEOGRAPHY_TYPE:
+        add_result("geography_type_expected", "PASS", f"Geography_Type = {sorted(geography_values)}")
+    else:
+        add_result(
+            "geography_type_expected",
+            "FAIL",
+            f"Unexpected Geography_Type values: {sorted(geography_values)}",
+        )
+
+    # Strata values
+    strata_values = set(df["Strata"].dropna().astype(str).unique())
+    unexpected_strata = sorted(strata_values - EXPECTED_STRATA)
+    if len(unexpected_strata) == 0:
+        add_result("strata_expected", "PASS", f"Strata values are expected: {sorted(strata_values)}")
+    else:
+        add_result("strata_expected", "FAIL", f"Unexpected Strata values: {unexpected_strata}")
+
+    # ICD revision
+    icd_values = set(df["ICD_Revision"].dropna().astype(str).unique())
+    if icd_values == EXPECTED_ICD_REVISION:
+        add_result("icd_revision_expected", "PASS", f"ICD_Revision = {sorted(icd_values)}")
+    else:
+        add_result("icd_revision_expected", "FAIL", f"Unexpected ICD_Revision values: {sorted(icd_values)}")
+
+    # Count validation with suppression awareness
+    annotation_code_clean = df["Annotation_Code"].fillna("").astype(str).str.strip()
+    count_numeric = pd.to_numeric(df["Count"], errors="coerce")
+
+    suppressed_mask = annotation_code_clean.isin(["1", "2"])
+    unsuppressed_mask = ~suppressed_mask
+
+    invalid_unsuppressed_count_n = int((unsuppressed_mask & count_numeric.isna()).sum())
+    negative_unsuppressed_count_n = int((unsuppressed_mask & (count_numeric < 0)).sum())
+    suppressed_row_n = int(suppressed_mask.sum())
+    suppressed_with_numeric_count_n = int((suppressed_mask & count_numeric.notna()).sum())
+
+    if invalid_unsuppressed_count_n == 0:
+        add_result(
+            "count_numeric_unsuppressed",
+            "PASS",
+            "All unsuppressed Count values are numeric.",
+        )
+    else:
+        add_result(
+            "count_numeric_unsuppressed",
+            "FAIL",
+            f"Found {invalid_unsuppressed_count_n} unsuppressed rows with nonnumeric Count values.",
+        )
+
+    if negative_unsuppressed_count_n == 0:
+        add_result(
+            "count_nonnegative_unsuppressed",
+            "PASS",
+            "All unsuppressed Count values are nonnegative.",
+        )
+    else:
+        add_result(
+            "count_nonnegative_unsuppressed",
+            "FAIL",
+            f"Found {negative_unsuppressed_count_n} unsuppressed rows with negative Count values.",
+        )
+
+    add_result(
+        "suppressed_rows_identified",
+        "PASS",
+        f"Found {suppressed_row_n} suppressed rows with Annotation_Code 1 or 2.",
+    )
+
+    if suppressed_with_numeric_count_n == 0:
+        add_result(
+            "suppressed_count_consistency",
+            "PASS",
+            "Suppressed rows have no numeric Count values, as expected.",
+        )
+    else:
+        add_result(
+            "suppressed_count_consistency",
+            "FAIL",
+            f"Found {suppressed_with_numeric_count_n} suppressed rows with numeric Count values.",
+        )
+
+    # Required descriptive fields
+    for col in ["Strata_Name", "Cause", "Cause_Desc"]:
+        missing_n = int(df[col].isna().sum())
+        if missing_n == 0:
+            add_result(f"{col.lower()}_present", "PASS", f"No missing values in {col}.")
+        else:
+            add_result(f"{col.lower()}_present", "FAIL", f"Found {missing_n} missing values in {col}.")
+
+    # Annotation codes should only be blank, 1, or 2
+    annotation_values = set(df["Annotation_Code"].fillna("").astype(str).str.strip().unique())
+    unexpected_annotation_values = sorted(annotation_values - {"", "1", "2"})
+    if len(unexpected_annotation_values) == 0:
+        add_result(
+            "annotation_codes_expected",
+            "PASS",
+            f"Annotation codes are valid: {sorted(annotation_values)}",
+        )
+    else:
+        add_result(
+            "annotation_codes_expected",
+            "FAIL",
+            f"Unexpected Annotation_Code values: {unexpected_annotation_values}",
+        )
+
+    # Date parsing
+    for col in ["Data_Extract_Date", "Data_Revision_Date"]:
+        parsed = pd.to_datetime(df[col], errors="coerce")
+        invalid_dates = int(parsed.isna().sum())
+        if invalid_dates == 0:
+            add_result(f"{col.lower()}_parseable", "PASS", f"All {col} values parsed successfully.")
+        else:
+            add_result(
+                f"{col.lower()}_parseable",
+                "FAIL",
+                f"Found {invalid_dates} unparseable values in {col}.",
+            )
+
+    return pd.DataFrame(results)
+
+
+def main():
+    latest_raw_file = get_latest_raw_file(RAW_DIR)
+    print(f"Validating file: {latest_raw_file}", flush=True)
+
+    df = pd.read_csv(latest_raw_file, dtype=str)
+    validation_results = run_validation_checks(df)
+
+    output_csv = VALIDATION_DIR / "validation_results_latest.csv"
+    output_txt = VALIDATION_DIR / "validation_report_latest.txt"
+
+    validation_results.to_csv(output_csv, index=False)
+
+    with open(output_txt, "w", encoding="utf-8") as f:
+        for _, row in validation_results.iterrows():
+            f.write(f"[{row['status']}] {row['check_name']}: {row['details']}\n")
+
+    fail_count = int((validation_results["status"] == "FAIL").sum())
+
+    print(f"Validation complete. FAIL checks: {fail_count}", flush=True)
+    print(f"Validation CSV saved to: {output_csv}", flush=True)
+    print(f"Validation report saved to: {output_txt}", flush=True)
+
+
+if __name__ == "__main__":
+    main()
+
+
+===== 03_transform_data.py =====
+
+from pathlib import Path
+import pandas as pd
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
+PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+
+PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def get_latest_raw_file(raw_dir: Path) -> Path:
+    files = sorted(raw_dir.glob("statewide_death_profiles_raw_*.csv"))
+    if not files:
+        raise FileNotFoundError("No raw mortality files found in data/raw.")
+    return files[-1]
+
+
+def transform_mortality_data(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+
+    # Clean text fields
+    text_cols = [
+        "Geography_Type",
+        "Strata",
+        "Strata_Name",
+        "Cause",
+        "Cause_Desc",
+        "ICD_Revision",
+        "Annotation_Code",
+        "Annotation_Desc",
+        "Data_Extract_Date",
+        "Data_Revision_Date",
+    ]
+
+    for col in text_cols:
+        df[col] = df[col].fillna("").astype(str).str.strip()
+
+    # Standardize numeric fields
+    df["Year"] = pd.to_numeric(df["Year"], errors="coerce").astype("Int64")
+    df["Month"] = pd.to_numeric(df["Month"], errors="coerce").astype("Int64")
+
+    # Create monthly reporting date
+    df["report_month"] = pd.to_datetime(
+        df["Year"].astype(str) + "-" + df["Month"].astype(str).str.zfill(2) + "-01",
+        errors="coerce"
+    )
+
+    # Parse source dates
+    df["data_extract_date"] = pd.to_datetime(df["Data_Extract_Date"], errors="coerce")
+    df["data_revision_date"] = pd.to_datetime(df["Data_Revision_Date"], errors="coerce")
+
+    # Suppression flags
+    df["is_suppressed"] = df["Annotation_Code"].isin(["1", "2"])
+    df["suppression_type"] = df["Annotation_Desc"].replace("", pd.NA)
+
+    # Numeric count
+    df["count_numeric"] = pd.to_numeric(df["Count"], errors="coerce")
+
+    # For unsuppressed records, count should be numeric
+    # For suppressed records, count_numeric should remain missing
+    df["is_total_population"] = df["Strata"].eq("Total Population")
+    df["is_all_cause"] = df["Cause"].eq("ALL")
+
+    # Simple month label for charts/tables later
+    df["report_month_label"] = df["report_month"].dt.strftime("%Y-%m")
+
+    return df
+
+
+def save_subset(df: pd.DataFrame, file_name: str) -> None:
+    output_file = PROCESSED_DIR / file_name
+    df.to_csv(output_file, index=False)
+
+
+def main():
+    latest_raw_file = get_latest_raw_file(RAW_DIR)
+    print(f"Transforming file: {latest_raw_file}", flush=True)
+
+    df = pd.read_csv(latest_raw_file, dtype=str)
+    df_clean = transform_mortality_data(df)
+
+    # Save full cleaned dataset
+    save_subset(df_clean, "mortality_cleaned.csv")
+
+    # Reporting subsets by strata
+    save_subset(
+        df_clean[df_clean["Strata"] == "Total Population"].copy(),
+        "mortality_total_population.csv"
+    )
+
+    save_subset(
+        df_clean[df_clean["Strata"] == "Age"].copy(),
+        "mortality_age.csv"
+    )
+
+    save_subset(
+        df_clean[df_clean["Strata"] == "Gender"].copy(),
+        "mortality_gender.csv"
+    )
+
+    save_subset(
+        df_clean[df_clean["Strata"] == "Race-Ethnicity"].copy(),
+        "mortality_race_ethnicity.csv"
+    )
+
+    save_subset(
+        df_clean[df_clean["Strata"] == "Place Type"].copy(),
+        "mortality_place_type.csv"
+    )
+
+    # Total population, cause-specific subset
+    save_subset(
+        df_clean[
+            (df_clean["Strata"] == "Total Population") &
+            (df_clean["Cause"] != "ALL")
+        ].copy(),
+        "mortality_total_population_cause_specific.csv"
+    )
+
+    # Simple transformation summary
+    summary_file = PROCESSED_DIR / "transformation_summary.txt"
+    with open(summary_file, "w", encoding="utf-8") as f:
+        f.write(f"Input rows: {len(df)}\n")
+        f.write(f"Output rows: {len(df_clean)}\n")
+        f.write(f"Suppressed rows: {int(df_clean['is_suppressed'].sum())}\n")
+        f.write(f"Date range: {df_clean['report_month'].min()} to {df_clean['report_month'].max()}\n")
+        f.write(f"Total Population rows: {len(df_clean[df_clean['Strata'] == 'Total Population'])}\n")
+        f.write(f"Age rows: {len(df_clean[df_clean['Strata'] == 'Age'])}\n")
+        f.write(f"Gender rows: {len(df_clean[df_clean['Strata'] == 'Gender'])}\n")
+        f.write(f"Race-Ethnicity rows: {len(df_clean[df_clean['Strata'] == 'Race-Ethnicity'])}\n")
+        f.write(f"Place Type rows: {len(df_clean[df_clean['Strata'] == 'Place Type'])}\n")
+
+    print("Transformation complete.", flush=True)
+    print(f"Processed files saved to: {PROCESSED_DIR}", flush=True)
+
+
+if __name__ == "__main__":
+    main()
+
+
+===== 04_generate_report_tables.py =====
+
+from pathlib import Path
+import pandas as pd
+import numpy as np
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+OUTPUT_TABLES_DIR = PROJECT_ROOT / "outputs" / "tables"
+OUTPUT_SUMMARIES_DIR = PROJECT_ROOT / "outputs" / "summaries"
+
+OUTPUT_TABLES_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def load_cleaned_data() -> pd.DataFrame:
+    file_path = PROCESSED_DIR / "mortality_cleaned.csv"
+    if not file_path.exists():
+        raise FileNotFoundError("Processed file mortality_cleaned.csv not found.")
+    df = pd.read_csv(file_path, parse_dates=["report_month", "data_extract_date", "data_revision_date"])
+    return df
+
+
+def save_table(df: pd.DataFrame, file_name: str) -> None:
+    df.to_csv(OUTPUT_TABLES_DIR / file_name, index=False)
+
+
+def create_monthly_trend_tables(df: pd.DataFrame) -> None:
+    analysis_df = df[(~df["is_suppressed"]) & (df["count_numeric"].notna())].copy()
+
+    total_pop_all_cause = (
+        analysis_df[
+            (analysis_df["Strata"] == "Total Population") &
+            (analysis_df["Cause"] == "ALL")
+        ]
+        .sort_values("report_month")
+        [["report_month", "report_month_label", "count_numeric"]]
+        .rename(columns={"count_numeric": "deaths"})
+    )
+    save_table(total_pop_all_cause, "monthly_total_population_all_cause.csv")
+
+    gender_all_cause = (
+        analysis_df[
+            (analysis_df["Strata"] == "Gender") &
+            (analysis_df["Cause"] == "ALL")
+        ]
+        .sort_values(["report_month", "Strata_Name"])
+        [["report_month", "report_month_label", "Strata_Name", "count_numeric"]]
+        .rename(columns={"Strata_Name": "gender", "count_numeric": "deaths"})
+    )
+    save_table(gender_all_cause, "monthly_gender_all_cause.csv")
+
+    age_all_cause = (
+        analysis_df[
+            (analysis_df["Strata"] == "Age") &
+            (analysis_df["Cause"] == "ALL")
+        ]
+        .sort_values(["report_month", "Strata_Name"])
+        [["report_month", "report_month_label", "Strata_Name", "count_numeric"]]
+        .rename(columns={"Strata_Name": "age_group", "count_numeric": "deaths"})
+    )
+    save_table(age_all_cause, "monthly_age_all_cause.csv")
+
+    race_all_cause = (
+        analysis_df[
+            (analysis_df["Strata"] == "Race-Ethnicity") &
+            (analysis_df["Cause"] == "ALL")
+        ]
+        .sort_values(["report_month", "Strata_Name"])
+        [["report_month", "report_month_label", "Strata_Name", "count_numeric"]]
+        .rename(columns={"Strata_Name": "race_ethnicity", "count_numeric": "deaths"})
+    )
+    save_table(race_all_cause, "monthly_race_ethnicity_all_cause.csv")
+
+    place_type_all_cause = (
+        analysis_df[
+            (analysis_df["Strata"] == "Place Type") &
+            (analysis_df["Cause"] == "ALL")
+        ]
+        .sort_values(["report_month", "Strata_Name"])
+        [["report_month", "report_month_label", "Strata_Name", "count_numeric"]]
+        .rename(columns={"Strata_Name": "place_type", "count_numeric": "deaths"})
+    )
+    save_table(place_type_all_cause, "monthly_place_type_all_cause.csv")
+
+
+def create_latest_month_summary_tables(df: pd.DataFrame) -> None:
+    analysis_df = df[(~df["is_suppressed"]) & (df["count_numeric"].notna())].copy()
+
+    latest_month = analysis_df["report_month"].max()
+    previous_month = latest_month - pd.offsets.MonthBegin(1)
+    prior_year_same_month = latest_month - pd.DateOffset(years=1)
+
+    # Latest month top causes for total population
+    latest_all_cause_total = analysis_df[
+        (analysis_df["report_month"] == latest_month) &
+        (analysis_df["Strata"] == "Total Population") &
+        (analysis_df["Cause"] == "ALL")
+    ]["count_numeric"].iloc[0]
+
+    latest_top_causes = (
+        analysis_df[
+            (analysis_df["report_month"] == latest_month) &
+            (analysis_df["Strata"] == "Total Population") &
+            (analysis_df["Cause"] != "ALL")
+        ]
+        .sort_values("count_numeric", ascending=False)
+        [["report_month", "Cause", "Cause_Desc", "count_numeric"]]
+        .rename(columns={"count_numeric": "deaths"})
+        .reset_index(drop=True)
+    )
+
+    latest_top_causes["rank"] = latest_top_causes.index + 1
+    latest_top_causes["share_of_total_pct"] = (
+        latest_top_causes["deaths"] / latest_all_cause_total * 100
+    ).round(2)
+
+    latest_top_causes = latest_top_causes[
+        ["rank", "report_month", "Cause", "Cause_Desc", "deaths", "share_of_total_pct"]
+    ]
+
+    save_table(latest_top_causes, "latest_month_top_causes_total_population.csv")
+
+    # Latest month vs previous month for all-cause total population
+    current_all_cause = analysis_df[
+        (analysis_df["report_month"] == latest_month) &
+        (analysis_df["Strata"] == "Total Population") &
+        (analysis_df["Cause"] == "ALL")
+    ][["report_month", "count_numeric"]].copy()
+    current_all_cause = current_all_cause.rename(columns={"count_numeric": "latest_deaths"})
+
+    previous_all_cause = analysis_df[
+        (analysis_df["report_month"] == previous_month) &
+        (analysis_df["Strata"] == "Total Population") &
+        (analysis_df["Cause"] == "ALL")
+    ][["report_month", "count_numeric"]].copy()
+    previous_all_cause = previous_all_cause.rename(columns={"count_numeric": "previous_month_deaths"})
+
+    latest_vs_previous = pd.DataFrame({
+        "latest_month": [latest_month],
+        "previous_month": [previous_month]
+    })
+
+    if not current_all_cause.empty:
+        latest_vs_previous["latest_deaths"] = current_all_cause["latest_deaths"].iloc[0]
+    else:
+        latest_vs_previous["latest_deaths"] = np.nan
+
+    if not previous_all_cause.empty:
+        latest_vs_previous["previous_month_deaths"] = previous_all_cause["previous_month_deaths"].iloc[0]
+    else:
+        latest_vs_previous["previous_month_deaths"] = np.nan
+
+    latest_vs_previous["absolute_change"] = (
+        latest_vs_previous["latest_deaths"] - latest_vs_previous["previous_month_deaths"]
+    )
+    latest_vs_previous["percent_change"] = np.where(
+        latest_vs_previous["previous_month_deaths"].notna() &
+        (latest_vs_previous["previous_month_deaths"] != 0),
+        (latest_vs_previous["absolute_change"] / latest_vs_previous["previous_month_deaths"]) * 100,
+        np.nan
+    )
+    save_table(latest_vs_previous, "latest_vs_previous_month_total_population_all_cause.csv")
+
+    # Latest month vs same month prior year for all-cause total population
+    prior_year_all_cause = analysis_df[
+        (analysis_df["report_month"] == prior_year_same_month) &
+        (analysis_df["Strata"] == "Total Population") &
+        (analysis_df["Cause"] == "ALL")
+    ][["report_month", "count_numeric"]].copy()
+    prior_year_all_cause = prior_year_all_cause.rename(columns={"count_numeric": "prior_year_same_month_deaths"})
+
+    latest_vs_prior_year = pd.DataFrame({
+        "latest_month": [latest_month],
+        "prior_year_same_month": [prior_year_same_month]
+    })
+
+    if not current_all_cause.empty:
+        latest_vs_prior_year["latest_deaths"] = current_all_cause["latest_deaths"].iloc[0]
+    else:
+        latest_vs_prior_year["latest_deaths"] = np.nan
+
+    if not prior_year_all_cause.empty:
+        latest_vs_prior_year["prior_year_same_month_deaths"] = prior_year_all_cause["prior_year_same_month_deaths"].iloc[0]
+    else:
+        latest_vs_prior_year["prior_year_same_month_deaths"] = np.nan
+
+    latest_vs_prior_year["absolute_change"] = (
+        latest_vs_prior_year["latest_deaths"] - latest_vs_prior_year["prior_year_same_month_deaths"]
+    )
+    latest_vs_prior_year["percent_change"] = np.where(
+        latest_vs_prior_year["prior_year_same_month_deaths"].notna() &
+        (latest_vs_prior_year["prior_year_same_month_deaths"] != 0),
+        (latest_vs_prior_year["absolute_change"] / latest_vs_prior_year["prior_year_same_month_deaths"]) * 100,
+        np.nan
+    )
+    save_table(latest_vs_prior_year, "latest_vs_prior_year_total_population_all_cause.csv")
+
+    # Cause-specific latest month vs previous month
+    current_causes = analysis_df[
+        (analysis_df["report_month"] == latest_month) &
+        (analysis_df["Strata"] == "Total Population") &
+        (analysis_df["Cause"] != "ALL")
+    ][["Cause", "Cause_Desc", "count_numeric"]].copy()
+    current_causes = current_causes.rename(columns={"count_numeric": "latest_deaths"})
+
+    previous_causes = analysis_df[
+        (analysis_df["report_month"] == previous_month) &
+        (analysis_df["Strata"] == "Total Population") &
+        (analysis_df["Cause"] != "ALL")
+    ][["Cause", "Cause_Desc", "count_numeric"]].copy()
+    previous_causes = previous_causes.rename(columns={"count_numeric": "previous_month_deaths"})
+
+    cause_vs_previous = current_causes.merge(
+        previous_causes,
+        on=["Cause", "Cause_Desc"],
+        how="outer"
+    )
+
+    cause_vs_previous["latest_month"] = latest_month
+    cause_vs_previous["previous_month"] = previous_month
+    cause_vs_previous["absolute_change"] = (
+        cause_vs_previous["latest_deaths"] - cause_vs_previous["previous_month_deaths"]
+    )
+    cause_vs_previous["percent_change"] = np.where(
+        cause_vs_previous["previous_month_deaths"].notna() &
+        (cause_vs_previous["previous_month_deaths"] != 0),
+        (cause_vs_previous["absolute_change"] / cause_vs_previous["previous_month_deaths"]) * 100,
+        np.nan
+    )
+    cause_vs_previous = cause_vs_previous.sort_values("latest_deaths", ascending=False)
+    save_table(cause_vs_previous, "latest_vs_previous_month_cause_specific.csv")
+
+    # Cause-specific latest month vs same month prior year
+    prior_year_causes = analysis_df[
+        (analysis_df["report_month"] == prior_year_same_month) &
+        (analysis_df["Strata"] == "Total Population") &
+        (analysis_df["Cause"] != "ALL")
+    ][["Cause", "Cause_Desc", "count_numeric"]].copy()
+    prior_year_causes = prior_year_causes.rename(columns={"count_numeric": "prior_year_same_month_deaths"})
+
+    cause_vs_prior_year = current_causes.merge(
+        prior_year_causes,
+        on=["Cause", "Cause_Desc"],
+        how="outer"
+    )
+
+    cause_vs_prior_year["latest_month"] = latest_month
+    cause_vs_prior_year["prior_year_same_month"] = prior_year_same_month
+    cause_vs_prior_year["absolute_change"] = (
+        cause_vs_prior_year["latest_deaths"] - cause_vs_prior_year["prior_year_same_month_deaths"]
+    )
+    cause_vs_prior_year["percent_change"] = np.where(
+        cause_vs_prior_year["prior_year_same_month_deaths"].notna() &
+        (cause_vs_prior_year["prior_year_same_month_deaths"] != 0),
+        (cause_vs_prior_year["absolute_change"] / cause_vs_prior_year["prior_year_same_month_deaths"]) * 100,
+        np.nan
+    )
+    cause_vs_prior_year = cause_vs_prior_year.sort_values("latest_deaths", ascending=False)
+    save_table(cause_vs_prior_year, "latest_vs_prior_year_cause_specific.csv")
+
+    # Text summary for the report
+    summary_file = OUTPUT_SUMMARIES_DIR / "latest_reporting_period_summary.txt"
+    with open(summary_file, "w", encoding="utf-8") as f:
+        f.write(f"Latest reporting month: {latest_month.strftime('%Y-%m')}\n")
+        f.write(f"Previous month used for comparison: {previous_month.strftime('%Y-%m')}\n")
+        f.write(f"Prior-year comparison month: {prior_year_same_month.strftime('%Y-%m')}\n")
+
+        if not latest_vs_previous["latest_deaths"].isna().all():
+            f.write(
+                f"Latest all-cause deaths: {latest_vs_previous['latest_deaths'].iloc[0]:,.0f}\n"
+            )
+        if not latest_vs_previous["previous_month_deaths"].isna().all():
+            f.write(
+                f"Previous month all-cause deaths: {latest_vs_previous['previous_month_deaths'].iloc[0]:,.0f}\n"
+            )
+        if not latest_vs_prior_year["prior_year_same_month_deaths"].isna().all():
+            f.write(
+                f"Same month prior year all-cause deaths: {latest_vs_prior_year['prior_year_same_month_deaths'].iloc[0]:,.0f}\n"
+            )
+
+
+def main():
+    df = load_cleaned_data()
+
+    print("Generating monthly reporting tables...", flush=True)
+
+    create_monthly_trend_tables(df)
+    create_latest_month_summary_tables(df)
+
+    print("Step 4 complete.", flush=True)
+    print(f"Tables saved to: {OUTPUT_TABLES_DIR}", flush=True)
+    print(f"Summary files saved to: {OUTPUT_SUMMARIES_DIR}", flush=True)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+===== 05_create_figures_and_narrative.py =====
+
+from pathlib import Path
+import pandas as pd
+import matplotlib.pyplot as plt
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+OUTPUT_TABLES_DIR = PROJECT_ROOT / "outputs" / "tables"
+OUTPUT_SUMMARIES_DIR = PROJECT_ROOT / "outputs" / "summaries"
+OUTPUT_FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
+OUTPUT_NARRATIVE_DIR = PROJECT_ROOT / "outputs" / "narrative"
+
+OUTPUT_FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_NARRATIVE_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def load_table(file_name: str, parse_dates=None) -> pd.DataFrame:
+    file_path = OUTPUT_TABLES_DIR / file_name
+    if not file_path.exists():
+        raise FileNotFoundError(f"Expected file not found: {file_path}")
+    return pd.read_csv(file_path, parse_dates=parse_dates)
+
+
+def load_cleaned_data() -> pd.DataFrame:
+    file_path = PROCESSED_DIR / "mortality_cleaned.csv"
+    if not file_path.exists():
+        raise FileNotFoundError(f"Expected file not found: {file_path}")
+    return pd.read_csv(
+        file_path,
+        parse_dates=["report_month", "data_extract_date", "data_revision_date"]
+    )
+
+
+def save_figure(file_name: str) -> None:
+    plt.tight_layout()
+    plt.savefig(OUTPUT_FIGURES_DIR / file_name, dpi=300, bbox_inches="tight")
+    plt.close()
+
+
+def save_table_figure(df: pd.DataFrame, title: str, file_name: str) -> None:
+    fig, ax = plt.subplots(figsize=(12, max(2.2, 0.7 * len(df) + 1.2)))
+    ax.axis("off")
+    ax.set_title(title, fontsize=12, pad=12)
+
+    display_df = df.copy()
+    for col in display_df.columns:
+        if pd.api.types.is_datetime64_any_dtype(display_df[col]):
+            display_df[col] = display_df[col].dt.strftime("%Y-%m-%d")
+
+    table = ax.table(
+        cellText=display_df.values,
+        colLabels=display_df.columns,
+        cellLoc="center",
+        loc="center"
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    table.scale(1, 1.4)
+
+    save_figure(file_name)
+
+
+def create_all_cause_trend_chart() -> None:
+    df = load_table("monthly_total_population_all_cause.csv", parse_dates=["report_month"])
+    df = df.sort_values("report_month")
+
+    plt.figure(figsize=(10, 5))
+    plt.plot(df["report_month"], df["deaths"], marker="o")
+    plt.title("California Monthly All-Cause Deaths, Total Population")
+    plt.xlabel("Reporting Month")
+    plt.ylabel("Deaths")
+    plt.grid(True, alpha=0.3)
+    save_figure("figure_1_total_population_all_cause_trend.png")
+
+
+def create_top_causes_chart() -> None:
+    df = load_table("latest_month_top_causes_total_population.csv", parse_dates=["report_month"])
+    df = df.head(10).sort_values("deaths", ascending=True)
+
+    plt.figure(figsize=(10, 6))
+    plt.barh(df["Cause_Desc"], df["deaths"])
+    plt.title("Top 10 Causes of Death in Latest Reporting Month")
+    plt.xlabel("Deaths")
+    plt.ylabel("Cause of Death")
+    save_figure("figure_2_latest_month_top_10_causes.png")
+
+
+def create_gender_trend_chart() -> None:
+    df = load_table("monthly_gender_all_cause.csv", parse_dates=["report_month"])
+    df = df.sort_values(["gender", "report_month"])
+
+    plt.figure(figsize=(10, 5))
+    for gender, group in df.groupby("gender"):
+        plt.plot(group["report_month"], group["deaths"], marker="o", label=gender)
+
+    plt.title("Monthly All-Cause Deaths by Gender")
+    plt.xlabel("Reporting Month")
+    plt.ylabel("Deaths")
+    plt.legend(title="Gender")
+    plt.grid(True, alpha=0.3)
+    save_figure("figure_3_gender_all_cause_trend.png")
+
+
+def create_latest_age_chart() -> None:
+    df = load_table("monthly_age_all_cause.csv", parse_dates=["report_month"])
+    latest_month = df["report_month"].max()
+    latest_df = df[df["report_month"] == latest_month].copy()
+
+    age_order = [
+        "Under 1 year",
+        "1-4 years",
+        "5-14 years",
+        "15-24 years",
+        "25-34 years",
+        "35-44 years",
+        "45-54 years",
+        "55-64 years",
+        "65-74 years",
+        "75-84 years",
+        "85 years and over",
+    ]
+
+    latest_df["age_group"] = pd.Categorical(
+        latest_df["age_group"],
+        categories=age_order,
+        ordered=True
+    )
+    latest_df = latest_df.sort_values("age_group")
+
+    plt.figure(figsize=(11, 5))
+    plt.bar(latest_df["age_group"].astype(str), latest_df["deaths"])
+    plt.title(f"All-Cause Deaths by Age Group ({latest_month.strftime('%Y-%m')})")
+    plt.xlabel("Age Group")
+    plt.ylabel("Deaths")
+    plt.xticks(rotation=45, ha="right")
+    save_figure("figure_4_latest_month_age_distribution.png")
+
+
+def create_latest_race_ethnicity_chart() -> None:
+    df = load_table("monthly_race_ethnicity_all_cause.csv", parse_dates=["report_month"])
+    latest_month = df["report_month"].max()
+    latest_df = df[df["report_month"] == latest_month].copy()
+    latest_df = latest_df.sort_values("deaths", ascending=True)
+
+    plt.figure(figsize=(10, 6))
+    plt.barh(latest_df["race_ethnicity"], latest_df["deaths"])
+    plt.title(f"All-Cause Deaths by Race-Ethnicity ({latest_month.strftime('%Y-%m')})")
+    plt.xlabel("Deaths")
+    plt.ylabel("Race-Ethnicity")
+    save_figure("figure_5_latest_month_race_ethnicity_distribution.png")
+
+
+def create_kpi_summary_table() -> None:
+    mom = pd.read_csv(OUTPUT_TABLES_DIR / "latest_vs_previous_month_total_population_all_cause.csv")
+    yoy = pd.read_csv(OUTPUT_TABLES_DIR / "latest_vs_prior_year_total_population_all_cause.csv")
+
+    kpi_df = pd.DataFrame(
+        {
+            "metric": [
+                "Latest reporting month",
+                "Latest all-cause deaths",
+                "Previous month",
+                "Previous month all-cause deaths",
+                "Month-over-month absolute change",
+                "Month-over-month percent change",
+                "Same month prior year",
+                "Same month prior-year deaths",
+                "Year-over-year absolute change",
+                "Year-over-year percent change",
+            ],
+            "value": [
+                mom.loc[0, "latest_month"][:7],
+                f"{mom.loc[0, 'latest_deaths']:,.0f}",
+                mom.loc[0, "previous_month"][:7],
+                f"{mom.loc[0, 'previous_month_deaths']:,.0f}",
+                f"{mom.loc[0, 'absolute_change']:,.0f}",
+                f"{mom.loc[0, 'percent_change']:.2f}%",
+                yoy.loc[0, "prior_year_same_month"][:7],
+                f"{yoy.loc[0, 'prior_year_same_month_deaths']:,.0f}",
+                f"{yoy.loc[0, 'absolute_change']:,.0f}",
+                f"{yoy.loc[0, 'percent_change']:.2f}%",
+            ],
+        }
+    )
+
+    kpi_df.to_csv(OUTPUT_SUMMARIES_DIR / "kpi_summary_table.csv", index=False)
+    save_table_figure(
+        kpi_df,
+        "KPI Summary for Latest Reporting Month",
+        "figure_6_kpi_summary_table.png"
+    )
+
+
+def create_data_quality_metadata_table() -> None:
+    df = load_cleaned_data()
+
+    extract_date = df["data_extract_date"].dropna().max()
+    revision_date = df["data_revision_date"].dropna().max()
+    latest_month = df["report_month"].dropna().max()
+    earliest_month = df["report_month"].dropna().min()
+
+    quality_df = pd.DataFrame(
+        {
+            "metric": [
+                "Source dataset",
+                "Raw extract row count",
+                "Processed row count",
+                "Suppressed rows",
+                "Unsuppressed rows",
+                "Suppressed row percent",
+                "Earliest reporting month",
+                "Latest reporting month",
+                "Data extract date",
+                "Data revision date",
+                "Geography type values",
+                "ICD revision values",
+                "Strata values",
+            ],
+            "value": [
+                "CHHS Statewide Death Profiles",
+                f"{len(df):,}",
+                f"{len(df):,}",
+                f"{int(df['is_suppressed'].sum()):,}",
+                f"{int((~df['is_suppressed']).sum()):,}",
+                f"{(df['is_suppressed'].mean() * 100):.2f}%",
+                earliest_month.strftime("%Y-%m"),
+                latest_month.strftime("%Y-%m"),
+                extract_date.strftime("%Y-%m-%d"),
+                revision_date.strftime("%Y-%m-%d"),
+                ", ".join(sorted(df["Geography_Type"].dropna().astype(str).unique())),
+                ", ".join(sorted(df["ICD_Revision"].dropna().astype(str).unique())),
+                ", ".join(sorted(df["Strata"].dropna().astype(str).unique())),
+            ],
+        }
+    )
+
+    quality_df.to_csv(OUTPUT_SUMMARIES_DIR / "data_quality_metadata_summary_table.csv", index=False)
+    save_table_figure(
+        quality_df,
+        "Data Quality and Extract Metadata Summary",
+        "figure_7_data_quality_metadata_table.png"
+    )
+
+
+def create_narrative_summary() -> None:
+    latest_summary = pd.read_csv(OUTPUT_TABLES_DIR / "latest_vs_previous_month_total_population_all_cause.csv")
+    yoy_summary = pd.read_csv(OUTPUT_TABLES_DIR / "latest_vs_prior_year_total_population_all_cause.csv")
+    top_causes = pd.read_csv(OUTPUT_TABLES_DIR / "latest_month_top_causes_total_population.csv").head(5)
+    df_clean = load_cleaned_data()
+
+    latest_month = latest_summary.loc[0, "latest_month"][:7]
+    latest_deaths = latest_summary.loc[0, "latest_deaths"]
+    mom_abs = latest_summary.loc[0, "absolute_change"]
+    mom_pct = latest_summary.loc[0, "percent_change"]
+    yoy_abs = yoy_summary.loc[0, "absolute_change"]
+    yoy_pct = yoy_summary.loc[0, "percent_change"]
+    suppressed_n = int(df_clean["is_suppressed"].sum())
+    extract_date = df_clean["data_extract_date"].dropna().max().strftime("%Y-%m-%d")
+    revision_date = df_clean["data_revision_date"].dropna().max().strftime("%Y-%m-%d")
+
+    lines = []
+    lines.append(f"Latest reporting month: {latest_month}")
+    lines.append(f"All-cause deaths in latest month: {latest_deaths:,.0f}")
+    lines.append(f"Compared with the previous month, deaths changed by {mom_abs:,.0f} ({mom_pct:.2f}%).")
+    lines.append(f"Compared with the same month in the prior year, deaths changed by {yoy_abs:,.0f} ({yoy_pct:.2f}%).")
+    lines.append("")
+    lines.append("Top 5 causes of death in the latest month:")
+    for _, row in top_causes.iterrows():
+        lines.append(
+            f"{int(row['rank'])}. {row['Cause_Desc']} - {row['deaths']:,.0f} deaths "
+            f"({row['share_of_total_pct']:.2f}% of all-cause deaths)"
+        )
+    lines.append("")
+    lines.append(f"Suppressed rows excluded from direct numeric interpretation: {suppressed_n:,}")
+    lines.append(f"Data extract date: {extract_date}")
+    lines.append(f"Data revision date: {revision_date}")
+    lines.append("The latest reporting month should be considered provisional because the source dataset is revised monthly.")
+
+    narrative_file = OUTPUT_NARRATIVE_DIR / "monthly_narrative_summary.txt"
+    with open(narrative_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+
+
+def main():
+    print("Creating figures and narrative summary...", flush=True)
+
+    create_all_cause_trend_chart()
+    create_top_causes_chart()
+    create_gender_trend_chart()
+    create_latest_age_chart()
+    create_latest_race_ethnicity_chart()
+    create_kpi_summary_table()
+    create_data_quality_metadata_table()
+    create_narrative_summary()
+
+    print("Step 5 complete.", flush=True)
+    print(f"Figures saved to: {OUTPUT_FIGURES_DIR}", flush=True)
+    print(f"Narrative summary saved to: {OUTPUT_NARRATIVE_DIR}", flush=True)
+    print(f"Summary tables saved to: {OUTPUT_SUMMARIES_DIR}", flush=True)
+
+
+if __name__ == "__main__":
+    main()
+
+
+===== 06_run_monthly_pipeline.py =====
+
+from pathlib import Path
+from datetime import datetime
+import subprocess
+import sys
+import pandas as pd
+import requests
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
+VALIDATION_DIR = PROJECT_ROOT / "data" / "validation"
+PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+OUTPUT_SUMMARIES_DIR = PROJECT_ROOT / "outputs" / "summaries"
+LOG_DIR = PROJECT_ROOT / "logs"
+
+RAW_DIR.mkdir(parents=True, exist_ok=True)
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+
+RESOURCE_ID = "3192c0ff-e380-4314-8a88-16a3bdace8b7"
+BASE_URL = "https://data.chhs.ca.gov/api/3/action/datastore_search"
+
+PROFILE_SCRIPT = PROJECT_ROOT / "scripts" / "01_profile_data.py"
+VALIDATE_SCRIPT = PROJECT_ROOT / "scripts" / "02_validate_data.py"
+TRANSFORM_SCRIPT = PROJECT_ROOT / "scripts" / "03_transform_data.py"
+REPORT_TABLES_SCRIPT = PROJECT_ROOT / "scripts" / "04_generate_report_tables.py"
+FIGURES_SCRIPT = PROJECT_ROOT / "scripts" / "05_create_figures_and_narrative.py"
+
+
+def log_message(message: str, log_file: Path) -> None:
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    line = f"[{timestamp}] {message}"
+    print(line, flush=True)
+    with open(log_file, "a", encoding="utf-8") as f:
+        f.write(line + "\n")
+
+
+def fetch_latest_source_metadata() -> dict:
+    response = requests.get(
+        BASE_URL,
+        params={"resource_id": RESOURCE_ID, "limit": 5},
+        timeout=30
+    )
+    response.raise_for_status()
+    payload = response.json()
+
+    if not payload.get("success", False):
+        raise RuntimeError("CKAN API request failed during metadata check.")
+
+    records = payload["result"]["records"]
+    if not records:
+        raise RuntimeError("No records returned from source dataset.")
+
+    sample_df = pd.DataFrame(records)
+
+    metadata = {
+        "data_extract_date": sample_df["Data_Extract_Date"].dropna().iloc[0] if "Data_Extract_Date" in sample_df.columns else None,
+        "data_revision_date": sample_df["Data_Revision_Date"].dropna().iloc[0] if "Data_Revision_Date" in sample_df.columns else None,
+        "source_total_rows": payload["result"].get("total")
+    }
+    return metadata
+
+
+def get_latest_processed_metadata_file() -> Path:
+    return OUTPUT_SUMMARIES_DIR / "pipeline_run_metadata.csv"
+
+
+def previous_run_matches(current_metadata: dict) -> bool:
+    metadata_file = get_latest_processed_metadata_file()
+    if not metadata_file.exists():
+        return False
+
+    prev = pd.read_csv(metadata_file)
+    if prev.empty:
+        return False
+
+    prev_row = prev.iloc[-1]
+
+    return (
+        str(prev_row.get("data_extract_date", "")) == str(current_metadata.get("data_extract_date", "")) and
+        str(prev_row.get("data_revision_date", "")) == str(current_metadata.get("data_revision_date", "")) and
+        str(prev_row.get("source_total_rows", "")) == str(current_metadata.get("source_total_rows", ""))
+    )
+
+
+def run_script(script_path: Path, log_file: Path) -> None:
+    log_message(f"Running {script_path.name}", log_file)
+
+    result = subprocess.run(
+        [sys.executable, "-u", str(script_path)],
+        cwd=PROJECT_ROOT,
+        capture_output=True,
+        text=True
+    )
+
+    if result.stdout:
+        log_message(result.stdout.strip(), log_file)
+
+    if result.returncode != 0:
+        if result.stderr:
+            log_message(result.stderr.strip(), log_file)
+        raise RuntimeError(f"{script_path.name} failed with return code {result.returncode}")
+
+
+def validation_passed() -> bool:
+    report_file = VALIDATION_DIR / "validation_report_latest.txt"
+    if not report_file.exists():
+        return False
+
+    with open(report_file, "r", encoding="utf-8") as f:
+        report_text = f.read()
+
+    return "[FAIL]" not in report_text
+
+
+def write_run_metadata(current_metadata: dict, log_file: Path) -> None:
+    metadata_file = get_latest_processed_metadata_file()
+
+    run_record = pd.DataFrame(
+        [
+            {
+                "run_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "data_extract_date": current_metadata.get("data_extract_date"),
+                "data_revision_date": current_metadata.get("data_revision_date"),
+                "source_total_rows": current_metadata.get("source_total_rows"),
+            }
+        ]
+    )
+
+    if metadata_file.exists():
+        existing = pd.read_csv(metadata_file)
+        updated = pd.concat([existing, run_record], ignore_index=True)
+    else:
+        updated = run_record
+
+    updated.to_csv(metadata_file, index=False)
+    log_message(f"Updated run metadata file: {metadata_file}", log_file)
+
+
+def main():
+    run_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = LOG_DIR / f"monthly_pipeline_run_{run_ts}.log"
+
+    log_message("Starting monthly mortality pipeline.", log_file)
+
+    current_metadata = fetch_latest_source_metadata()
+    log_message(
+        f"Source metadata check: extract_date={current_metadata['data_extract_date']}, "
+        f"revision_date={current_metadata['data_revision_date']}, "
+        f"source_total_rows={current_metadata['source_total_rows']}",
+        log_file
+    )
+
+    if previous_run_matches(current_metadata):
+        log_message("No source update detected. Pipeline stopped without rerun.", log_file)
+        return
+
+    log_message("New or revised source data detected. Running pipeline.", log_file)
+
+    run_script(PROFILE_SCRIPT, log_file)
+    run_script(VALIDATE_SCRIPT, log_file)
+
+    if not validation_passed():
+        raise RuntimeError("Validation failed. Downstream processing stopped.")
+
+    run_script(TRANSFORM_SCRIPT, log_file)
+    run_script(REPORT_TABLES_SCRIPT, log_file)
+    run_script(FIGURES_SCRIPT, log_file)
+
+    write_run_metadata(current_metadata, log_file)
+    log_message("Monthly mortality pipeline completed successfully.", log_file)
+
+
+if __name__ == "__main__":
+    main()

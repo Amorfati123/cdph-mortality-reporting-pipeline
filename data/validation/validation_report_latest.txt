@@ -1,0 +1,19 @@
+[PASS] required_columns_present: All required columns are present.
+[PASS] row_count_positive: Row count = 4550
+[PASS] full_duplicate_rows: No fully duplicated rows found.
+[PASS] duplicate_analytic_keys: No duplicate analytic keys found.
+[PASS] year_numeric: All Year values are numeric.
+[PASS] month_valid_range: All Month values are between 01 and 12.
+[PASS] geography_type_expected: Geography_Type = ['Occurrence']
+[PASS] strata_expected: Strata values are expected: ['Age', 'Gender', 'Place Type', 'Race-Ethnicity', 'Total Population']
+[PASS] icd_revision_expected: ICD_Revision = ['ICD-10']
+[PASS] count_numeric_unsuppressed: All unsuppressed Count values are numeric.
+[PASS] count_nonnegative_unsuppressed: All unsuppressed Count values are nonnegative.
+[PASS] suppressed_rows_identified: Found 968 suppressed rows with Annotation_Code 1 or 2.
+[PASS] suppressed_count_consistency: Suppressed rows have no numeric Count values, as expected.
+[PASS] strata_name_present: No missing values in Strata_Name.
+[PASS] cause_present: No missing values in Cause.
+[PASS] cause_desc_present: No missing values in Cause_Desc.
+[PASS] annotation_codes_expected: Annotation codes are valid: ['', '1', '2']
+[PASS] data_extract_date_parseable: All Data_Extract_Date values parsed successfully.
+[PASS] data_revision_date_parseable: All Data_Revision_Date values parsed successfully.

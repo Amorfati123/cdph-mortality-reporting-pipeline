@@ -1,0 +1,15 @@
+Cause,Cause_Desc,latest_deaths,prior_year_same_month_deaths,latest_month,prior_year_same_month,absolute_change,percent_change
+CAN,Malignant neoplasms,5173.0,5475.0,2026-01-01,2025-01-01,-302.0,-5.5159817351598175
+HTD,Diseases of heart,4807.0,6549.0,2026-01-01,2025-01-01,-1742.0,-26.599480836768976
+STK,Cerebrovascular diseases,1501.0,1696.0,2026-01-01,2025-01-01,-195.0,-11.497641509433961
+ALZ,Alzheimer's disease,1464.0,1663.0,2026-01-01,2025-01-01,-199.0,-11.966325917017437
+CLD,Chronic lower respiratory diseases,969.0,1207.0,2026-01-01,2025-01-01,-238.0,-19.718309859154928
+DIA,Diabetes mellitus,956.0,1167.0,2026-01-01,2025-01-01,-211.0,-18.080548414738644
+HYP,Essential hypertension and hypertensive renal disease,627.0,665.0,2026-01-01,2025-01-01,-38.0,-5.714285714285714
+PNF,Influenza and pneumonia,617.0,1184.0,2026-01-01,2025-01-01,-567.0,-47.888513513513516
+LIV,Chronic liver disease and cirrhosis,512.0,635.0,2026-01-01,2025-01-01,-123.0,-19.37007874015748
+INJ,Accidents (unintentional injuries),479.0,1697.0,2026-01-01,2025-01-01,-1218.0,-71.77371832645846
+PAR,Parkinson's disease,405.0,429.0,2026-01-01,2025-01-01,-24.0,-5.594405594405594
+NEP,"Nephritis, nephrotic syndrome and nephrosis",337.0,486.0,2026-01-01,2025-01-01,-149.0,-30.65843621399177
+SUI,Intentional self-harm (suicide),143.0,342.0,2026-01-01,2025-01-01,-199.0,-58.187134502923975
+HOM,Assault (homicide),53.0,129.0,2026-01-01,2025-01-01,-76.0,-58.91472868217055

@@ -1,0 +1,15 @@
+rank,report_month,Cause,Cause_Desc,deaths,share_of_total_pct
+1,2026-01-01,CAN,Malignant neoplasms,5173.0,20.67
+2,2026-01-01,HTD,Diseases of heart,4807.0,19.21
+3,2026-01-01,STK,Cerebrovascular diseases,1501.0,6.0
+4,2026-01-01,ALZ,Alzheimer's disease,1464.0,5.85
+5,2026-01-01,CLD,Chronic lower respiratory diseases,969.0,3.87
+6,2026-01-01,DIA,Diabetes mellitus,956.0,3.82
+7,2026-01-01,HYP,Essential hypertension and hypertensive renal disease,627.0,2.51
+8,2026-01-01,PNF,Influenza and pneumonia,617.0,2.47
+9,2026-01-01,LIV,Chronic liver disease and cirrhosis,512.0,2.05
+10,2026-01-01,INJ,Accidents (unintentional injuries),479.0,1.91
+11,2026-01-01,PAR,Parkinson's disease,405.0,1.62
+12,2026-01-01,NEP,"Nephritis, nephrotic syndrome and nephrosis",337.0,1.35
+13,2026-01-01,SUI,Intentional self-harm (suicide),143.0,0.57
+14,2026-01-01,HOM,Assault (homicide),53.0,0.21

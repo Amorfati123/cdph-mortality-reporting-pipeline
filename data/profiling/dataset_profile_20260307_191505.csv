@@ -1,0 +1,15 @@
+column,dtype,missing_n,missing_pct,distinct_n,sample_values
+_id,int64,0,0.0,4550,1 | 2 | 3 | 4 | 5
+Year,str,0,0.0,3,2024 | 2025 | 2026
+Month,str,0,0.0,12,01 | 02 | 03 | 04 | 05
+Geography_Type,str,0,0.0,1,Occurrence
+Strata,str,0,0.0,5,Total Population | Age | Gender | Place Type | Race-Ethnicity
+Strata_Name,str,0,0.0,27,Total Population | Under 1 year | 1-4 years | 5-14 years | 15-24 years
+Cause,str,0,0.0,15,ALL | ALZ | CAN | CLD | DIA
+Cause_Desc,str,0,0.0,15,All causes (total) | Alzheimer's disease | Malignant neoplasms | Chronic lower respiratory diseases | Diabetes mellitus
+ICD_Revision,str,0,0.0,1,ICD-10
+Count,float64,968,21.27,1437,27728.0 | 132.0 | 24.0 | 53.0 | 264.0
+Annotation_Code,str,3582,78.73,2,1 | 2
+Annotation_Desc,str,3582,78.73,2,Cell suppressed for small numbers | Cell suppressed for complementary cell
+Data_Extract_Date,str,0,0.0,1,02/17/2026
+Data_Revision_Date,str,0,0.0,1,02/17/2026

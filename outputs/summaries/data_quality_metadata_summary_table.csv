@@ -1,0 +1,14 @@
+metric,value
+Source dataset,CHHS Statewide Death Profiles
+Raw extract row count,"4,550"
+Processed row count,"4,550"
+Suppressed rows,968
+Unsuppressed rows,"3,582"
+Suppressed row percent,21.27%
+Earliest reporting month,2024-01
+Latest reporting month,2026-01
+Data extract date,2026-02-17
+Data revision date,2026-02-17
+Geography type values,Occurrence
+ICD revision values,ICD-10
+Strata values,"Age, Gender, Place Type, Race-Ethnicity, Total Population"
